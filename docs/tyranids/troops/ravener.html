@@ -1,0 +1,89 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 10px;
+            background-color: #f4f4f9;
+        }
+
+        h3 {
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h3 {
+            margin-top: 20px;
+        }
+
+        /* Top Navigation Bar Styles */
+        nav {
+            background-color: #333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Right-aligned links (e.g., for other sections or logout) */
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h3>UiExt</h3><table border='1'><tr><td>minimap teamcolor</td><td>true</td></tr><tr><td>speech directory</td><td>Speech\Races\Tyranids\Ravener alpha</td></tr><tr><td>minimap enable</td><td>true</td></tr><tr><td>ui hotkey name</td><td>tyranids ravener alpha</td></tr><td colspan='7'><strong>ui info</strong>: <table border='1'><td colspan='3'><strong>help text list</strong>: <table border='1'><tr><td>text 01</td><td>$97542 -- - Commander.</td></tr><tr><td>text 02</td><td>$17950467 -- - Able to ambush enemies by burrowing and deburrowing (teleport.)</td></tr><tr><td>text 03</td><td>$17950465 -- - Can be upgraded with weapon to become effective against Heavy Infantry.</td></tr><tr><td>text 04</td><td>$17950922 -- - SYNAPTIC: Provides Synapse, a passive aura which initially enables brood reinforcement and grants morale inmunity to any Tyranid units in a small area. Aura may be upgraded to provide better bonuses (Capillary Tower building.)</td></tr><tr><td>text 05</td><td>$16510242 --        - RANGE: Medium Range effective against Infantry, Heavy Infantry, Daemon and Light Fortified Building.</td></tr><tr><td>text 06</td><td>$16510241 --        - MELEE: Effective against Infantry, Heavy Infantry, Daemon, Monster, Commander, Light Vehicle, Light Fortified Building and Greater Daemon.</td></tr><tr><td>text 07</td><td>$15903905 -- - Detects infiltration units and minefields.</td></tr></table></td><tr><td>screen name id</td><td>$17950499 -- Ravener</td></tr><tr><td>icon name</td><td>tyranid icons/tyr ravener alpha</td></tr></table></td><tr><td>ui index hint</td><td>5</td></tr></table><h3>HealthExt</h3><table border='1'><tr><td>armour minimum</td><td>3</td></tr><tr><td>poison spread delay</td><td>2</td></tr><tr><td>pre death event delay</td><td>3</td></tr><tr><td>regeneration decrease in combat</td><td>0.5</td></tr><tr><td>regeneration rate</td><td>2</td></tr><tr><td>armour</td><td>100</td></tr><tr><td>morale death</td><td>40</td></tr><tr><td>poison immunity duration</td><td>30</td></tr><tr><td>hitpoints</td><td>900</td></tr><tr><td>poison event</td><td>art\events\Chaos\BiotoxBomb aura Large</td></tr><tr><td>poison damage duration</td><td>15</td></tr><tr><td>poison damage</td><td>0.8</td></tr><tr><td>spawn death blossom</td><td>ebps\environment\gameplay\dark eldar death blossom</td></tr><tr><td>death event</td><td>data:/art/events/unit death events/sink into ground.events</td></tr></table><h3>TypeExt</h3><table border='1'><td colspan='2'><strong>type armour</strong>: <table border='1'><tr><td>reference</td><td>type armour\tp commander</td></tr><tr><td>screen name id</td><td>$90104 -- Infantry</td></tr></table></td></table><h3>CostExt</h3><table border='1'><td colspan='2'><strong>time cost</strong>: <table border='1'><td colspan='2'><strong>cost</strong>: <table border='1'><tr><td>requisition</td><td>200</td></tr><tr><td>power</td><td>70</td></tr></table></td><tr><td>time seconds</td><td>55</td></tr></table></td></table><h3>MovingExt</h3><table border='1'><tr><td>speed max</td><td>20</td></tr></table><h3>SightExt</h3><table border='1'><tr><td>keen sight radius</td><td>15</td></tr><tr><td>sight radius</td><td>25</td></tr></table><h3>CombatExt</h3><table border='1'><td colspan='3'><strong>hardpoints</strong>: <table border='1'><td colspan='9'><strong>hardpoint 01</strong>: <table border='1'><tr><td>horizontal aim motion variable name</td><td>Aim Horizontal Main</td></tr><tr><td>vertical aim motion variable name</td><td>Aim Vertical Main</td></tr><td colspan='6'><strong>weapon table</strong>: <table border='1'><td colspan='2'><strong>weapon 01</strong>: <table border='1'><tr><td>weapon</td><td>tyranids devourer ravener</td></tr><tr><td>name</td><td>Chaos Autocannon</td></tr></table></td><td colspan='2'><strong>weapon 02</strong>: <table border='1'><tr><td>weapon</td><td>tyranids deathspitter ravener</td></tr><tr><td>name</td><td>Chaos Assault Cannon</td></tr></table></td></table></td><tr><td>attack motion variable name</td><td>Weapon Range Tracking Main</td></tr><tr><td>shoot motion variable name</td><td>Weapon Range Firing Main</td></tr><tr><td>hardpoint weapon variant motion name</td><td>Weapon Range Upgrade Main</td></tr></table></td><td colspan='9'><strong>hardpoint 02</strong>: <table border='1'><tr><td>horizontal aim motion variable name</td><td></td></tr><tr><td>vertical aim motion variable name</td><td></td></tr><td colspan='6'><strong>weapon table</strong>: <table border='1'><td colspan='1'><strong>weapon 01</strong>: <table border='1'><tr><td>weapon</td><td>tyranids scything talons ravener</td></tr><tr><td>name</td><td>talons</td></tr></table></td></table></td><tr><td>attack motion variable name</td><td></td></tr><tr><td>shoot motion variable name</td><td></td></tr><tr><td>hardpoint weapon variant motion name</td><td>Weapon Melee Upgrade Main</td></tr></table></td><td colspan='9'><strong>hardpoint 03</strong>: <table border='1'><td colspan='1'><strong>weapon table</strong>: <table border='1'></table></td></table></td><td colspan='9'><strong>hardpoint 04</strong>: <table border='1'><td colspan='1'><strong>weapon table</strong>: <table border='1'></table></td></table></td><td colspan='9'><strong>hardpoint 05</strong>: <table border='1'><td colspan='1'><strong>weapon table</strong>: <table border='1'></table></td></table></td><td colspan='9'><strong>hardpoint 06</strong>: <table border='1'><td colspan='1'><strong>weapon table</strong>: <table border='1'></table></td></table></td><td colspan='9'><strong>hardpoint 07</strong>: <table border='1'><td colspan='1'><strong>weapon table</strong>: <table border='1'></table></td></table></td><td colspan='9'><strong>hardpoint 08</strong>: <table border='1'><td colspan='1'><strong>weapon table</strong>: <table border='1'></table></td></table></td><td colspan='9'><strong>hardpoint 09</strong>: <table border='1'><td colspan='1'><strong>weapon table</strong>: <table border='1'></table></td></table></td></table></td><tr><td>complex upgrades</td><td>true</td></tr></table><h3>DeathExplosionExt</h3><table border='1'><tr><td>chance</td><td>100</td></tr><td colspan='3'><strong>death explosions</strong>: <table border='1'><td colspan='2'><strong>death explosion 01</strong>: <table border='1'><tr><td>chance</td><td>100</td></tr><td colspan='2'><strong>area effect</strong>: <table border='1'><td colspan='2'><strong>area effect information</strong>: <table border='1'><td colspan='4'><strong>filter type</strong>: <table border='1'></table></td><td colspan='4'><strong>area type</strong>: <table border='1'></table></td><tr><td>radius</td><td>300</td></tr><tr><td>remove modifiers with source entity</td><td>false</td></tr></table></td><td colspan='2'><strong>weapon damage</strong>: <table border='1'></table></td></table></td></table></td><td colspan='2'><strong>death explosion 03</strong>: <table border='1'><tr><td>chance</td><td>100</td></tr><td colspan='2'><strong>area effect</strong>: <table border='1'><td colspan='2'><strong>area effect information</strong>: <table border='1'><td colspan='4'><strong>filter type</strong>: <table border='1'></table></td><td colspan='4'><strong>area type</strong>: <table border='1'></table></td><tr><td>radius</td><td>300</td></tr><tr><td>remove modifiers with source entity</td><td>false</td></tr></table></td><td colspan='2'><strong>weapon damage</strong>: <table border='1'></table></td></table></td></table></td></table></td></table><h3>MeleeExt</h3><table border='1'><td colspan='2'><strong>charge modifiers</strong>: <table border='1'></table></td></table><h3>AbilityExt</h3><table border='1'><td colspan='2'><strong>abilities</strong>: <table border='1'><tr><td>ability 03</td><td>tyranids toxic miasma</td></tr><tr><td>ability 04</td><td>tyranids ravener acid shot</td></tr><tr><td>ability 05</td><td>tyranids synapse aura single entity</td></tr><tr><td>ability 06</td><td>tyranids synapse aura entities</td></tr><tr><td>ability 07</td><td>tyranids synapse aura entities lvl2</td></tr><tr><td>ability 08</td><td>tyranids synapse aura entities lvl3</td></tr><tr><td>ability 09</td><td>tyranids synapse aura single entitylvl2</td></tr></table></td></table><h3>SpecialAttackPhysicsExt</h3><table border='1'><tr><td>mass</td><td>24</td></tr></table><h3>EntityBlueprintExt</h3><table border='1'><tr><td>scale z</td><td>0.5</td></tr><tr><td>scale x</td><td>0.5</td></tr><tr><td>minimum update radius</td><td>1</td></tr><tr><td>animator</td><td>races\race tyranid\troops\ravener alpha</td></tr></table><h3>SimEntityExt</h3><table border='1'></table><h3>ModifierExt</h3><table border='1'></table><h3>CoverExt</h3><table border='1'><td colspan='4'><strong>cover heavy</strong>: <table border='1'><td colspan='1'><strong>modifiers</strong>: <table border='1'><td colspan='2'><strong>modifier 02</strong>: <table border='1'><tr><td>value</td><td>0.75</td></tr></table></td><td colspan='2'><strong>modifier 03</strong>: <table border='1'></table></td></table></td></table></td><td colspan='4'><strong>cover light</strong>: <table border='1'><td colspan='1'><strong>modifiers</strong>: <table border='1'><td colspan='1'><strong>modifier 03</strong>: <table border='1'></table></td></table></td></table></td><td colspan='4'><strong>cover negative</strong>: <table border='1'><td colspan='1'><strong>modifiers</strong>: <table border='1'><td colspan='1'><strong>modifier 03</strong>: <table border='1'></table></td></table></td></table></td></table><h3>InfiltrationExt</h3><table border='1'></table><h3>ModifierApplyExt</h3><table border='1'><td colspan='2'><strong>modifiers</strong>: <table border='1'><td colspan='1'><strong>modifier 01</strong>: <table border='1'><tr><td>value</td><td>-1</td></tr></table></td></table></td></table>
+</body>
+</html>

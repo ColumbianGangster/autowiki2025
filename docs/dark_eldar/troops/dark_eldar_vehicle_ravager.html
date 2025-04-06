@@ -1,0 +1,89 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 10px;
+            background-color: #f4f4f9;
+        }
+
+        h3 {
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h3 {
+            margin-top: 20px;
+        }
+
+        /* Top Navigation Bar Styles */
+        nav {
+            background-color: #333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Right-aligned links (e.g., for other sections or logout) */
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h3>UiExt</h3><table border='1'><tr><td>minimap teamcolor</td><td>true</td></tr><tr><td>speech directory</td><td>Speech/Races/Dark Eldar/Ravager;Speech/Races/Dark Eldar/Tanks</td></tr><tr><td>minimap enable</td><td>true</td></tr><tr><td>ui hotkey name</td><td>dark eldar ravager</td></tr><td colspan='7'><strong>ui info</strong>: <table border='1'><td colspan='3'><strong>help text list</strong>: <table border='1'><tr><td>text 01</td><td>$4050123 -- - Medium Vehicle.</td></tr><tr><td>text 02</td><td>$97083 -- - Heavily armed and armored weapon platform.</td></tr><tr><td>text 03</td><td>$18010419 -- - If the vehicle is damaged down to its 20% of max health, its max speed will be decreased by 25% until it is repaired.</td></tr><tr><td>text 04</td><td>$17000191 --         - Can be upgraded with weapons to become effective against Vehicles, Buildings and Monsters.</td></tr><tr><td>text 05</td><td>$16510040 -- - RANGED: Long Range effective against Infantry, Heavy Infantry, Daemon, Monster, Commander, Light Vehicle and Light Fortified Building.</td></tr><tr><td>text 06</td><td>$17000104 -- - Limited to 3 maximum on the battlefield at the same time.</td></tr></table></td><tr><td>screen name id</td><td>$4050122 -- Ravager</td></tr><tr><td>icon name</td><td>dark eldar icons/ravager icon</td></tr></table></td><tr><td>ui index hint</td><td>4</td></tr></table><h3>HealthExt</h3><table border='1'><tr><td>max repairers</td><td>2</td></tr><tr><td>poison spread delay</td><td>2</td></tr><tr><td>pre death event delay</td><td>3</td></tr><tr><td>armour</td><td>100</td></tr><tr><td>can be repaired</td><td>true</td></tr><tr><td>hitpoints</td><td>2000</td></tr><tr><td>poison event</td><td>art\\events\\Chaos\\BiotoxBomb aura Large</td></tr><tr><td>spawn death blossom</td><td>ebps\environment\gameplay\dark eldar death blossom</td></tr><tr><td>death event</td><td>unit death events/vehicle death</td></tr></table><h3>TypeExt</h3><table border='1'><td colspan='3'><strong>type surface</strong>: <table border='1'></table></td><td colspan='3'><strong>type armour</strong>: <table border='1'><tr><td>reference</td><td>type armour\tp vehicle med</td></tr></table></td></table><h3>CostExt</h3><table border='1'><td colspan='2'><strong>time cost</strong>: <table border='1'><td colspan='2'><strong>cost</strong>: <table border='1'><tr><td>requisition</td><td>150</td></tr><tr><td>power</td><td>300</td></tr></table></td><tr><td>time seconds</td><td>60</td></tr></table></td></table><h3>MovingExt</h3><table border='1'><tr><td>turning behavior template</td><td>hovercraft</td></tr><tr><td>speed max</td><td>26</td></tr></table><h3>SightExt</h3><table border='1'><tr><td>sight radius</td><td>30</td></tr></table><h3>CombatExt</h3><table border='1'><td colspan='3'><strong>hardpoints</strong>: <table border='1'><td colspan='3'><strong>hardpoint 01</strong>: <table border='1'><tr><td>horizontal aim motion variable name</td><td>Aim Horizontal Main</td></tr><tr><td>vertical aim motion variable name</td><td>Aim Vertical Main</td></tr><td colspan='6'><strong>weapon table</strong>: <table border='1'><td colspan='2'><strong>weapon 01</strong>: <table border='1'><tr><td>weapon</td><td>dark eldar disintegrator ravager</td></tr><tr><td>name</td><td>Dark Eldar Disintegrator</td></tr><td colspan='4'><strong>origin</strong>: <table border='1'><tr><td>y</td><td>3.25</td></tr></table></td><td colspan='4'><strong>muzzle</strong>: <table border='1'><tr><td>y</td><td>3.25</td></tr></table></td></table></td><td colspan='2'><strong>weapon 02</strong>: <table border='1'><tr><td>weapon</td><td>dark eldar dark lance ravager</td></tr><tr><td>name</td><td>Dark eldar Dark Lance</td></tr><td colspan='4'><strong>origin</strong>: <table border='1'><tr><td>y</td><td>3.25</td></tr></table></td><td colspan='4'><strong>muzzle</strong>: <table border='1'><tr><td>y</td><td>3.25</td></tr></table></td></table></td></table></td><tr><td>attack motion variable name</td><td>Weapon Range Tracking Main</td></tr><tr><td>shoot motion variable name</td><td>Weapon Range Firing Main</td></tr><tr><td>hardpoint weapon variant motion name</td><td>Weapon Range Upgrade Main</td></tr></table></td><td colspan='3'><strong>hardpoint 02</strong>: <table border='1'><tr><td>horizontal aim motion variable name</td><td>Aim Horizontal Right</td></tr><tr><td>vertical aim motion variable name</td><td>Aim Vertical Right</td></tr><td colspan='6'><strong>weapon table</strong>: <table border='1'><td colspan='2'><strong>weapon 01</strong>: <table border='1'><tr><td>weapon</td><td>dark eldar disintegrator ravager 2</td></tr><tr><td>name</td><td>Dark Eldar Disintegrator</td></tr><td colspan='4'><strong>origin</strong>: <table border='1'><tr><td>y</td><td>3</td></tr></table></td><td colspan='4'><strong>muzzle</strong>: <table border='1'><tr><td>y</td><td>3</td></tr></table></td></table></td><td colspan='2'><strong>weapon 02</strong>: <table border='1'><tr><td>weapon</td><td>dark eldar dark lance ravager right</td></tr><tr><td>name</td><td>Dark Eldar Dark Lance</td></tr><td colspan='4'><strong>origin</strong>: <table border='1'><tr><td>y</td><td>3</td></tr></table></td><td colspan='4'><strong>muzzle</strong>: <table border='1'><tr><td>y</td><td>3</td></tr></table></td></table></td></table></td><tr><td>attack motion variable name</td><td>Weapon Range Tracking Right</td></tr><tr><td>shoot motion variable name</td><td>Weapon Range Firing Right</td></tr><tr><td>hardpoint weapon variant motion name</td><td>Weapon Range Upgrade Right</td></tr></table></td><td colspan='3'><strong>hardpoint 03</strong>: <table border='1'><tr><td>horizontal aim motion variable name</td><td>Aim Horizontal Left</td></tr><tr><td>vertical aim motion variable name</td><td>Aim Vertical Left</td></tr><td colspan='6'><strong>weapon table</strong>: <table border='1'><td colspan='2'><strong>weapon 01</strong>: <table border='1'><tr><td>weapon</td><td>dark eldar disintegrator ravager 3</td></tr><tr><td>name</td><td>Dark Eldar Disintegrator</td></tr><td colspan='4'><strong>origin</strong>: <table border='1'><tr><td>y</td><td>3</td></tr></table></td><td colspan='4'><strong>muzzle</strong>: <table border='1'><tr><td>y</td><td>3</td></tr></table></td></table></td><td colspan='2'><strong>weapon 02</strong>: <table border='1'><tr><td>weapon</td><td>dark eldar dark lance ravager left</td></tr><tr><td>name</td><td>Dark Eldar Dark Lance</td></tr><td colspan='4'><strong>origin</strong>: <table border='1'><tr><td>y</td><td>3</td></tr></table></td><td colspan='4'><strong>muzzle</strong>: <table border='1'><tr><td>y</td><td>3</td></tr></table></td></table></td></table></td><tr><td>attack motion variable name</td><td>Weapon Range Tracking Left</td></tr><tr><td>shoot motion variable name</td><td>Weapon Range Firing Left</td></tr><tr><td>hardpoint weapon variant motion name</td><td>Weapon Range Upgrade Left</td></tr></table></td></table></td><tr><td>complex upgrades</td><td>true</td></tr></table><h3>DeathExplosionExt</h3><table border='1'><tr><td>chance</td><td>1</td></tr><td colspan='3'><strong>death explosions</strong>: <table border='1'><td colspan='4'><strong>death explosion 01</strong>: <table border='1'><tr><td>chance</td><td>100</td></tr><td colspan='2'><strong>area effect</strong>: <table border='1'><td colspan='3'><strong>area effect information</strong>: <table border='1'><td colspan='2'><strong>area type</strong>: <table border='1'></table></td><tr><td>radius</td><td>10</td></tr></table></td><td colspan='3'><strong>weapon damage</strong>: <table border='1'><td colspan='1'><strong>armour damage</strong>: <table border='1'><tr><td>max damage</td><td>120</td></tr><tr><td>morale damage</td><td>15</td></tr><tr><td>min damage</td><td>100</td></tr></table></td></table></td><td colspan='3'><strong>throw data</strong>: <table border='1'><tr><td>force min</td><td>25</td></tr><tr><td>force max</td><td>45</td></tr><tr><td>up angle min</td><td>30</td></tr><tr><td>direction angle random</td><td>10</td></tr><tr><td>up angle max</td><td>45</td></tr></table></td></table></td></table></td><td colspan='4'><strong>death explosion 02</strong>: <table border='1'><td colspan='1'><strong>area effect</strong>: <table border='1'><td colspan='3'><strong>area effect information</strong>: <table border='1'><td colspan='3'><strong>filter type</strong>: <table border='1'></table></td><td colspan='3'><strong>area type</strong>: <table border='1'></table></td><tr><td>radius</td><td>10</td></tr></table></td><td colspan='3'><strong>weapon damage</strong>: <table border='1'><td colspan='1'><strong>armour damage</strong>: <table border='1'><tr><td>armour piercing</td><td>5</td></tr><tr><td>max damage</td><td>200</td></tr><tr><td>morale damage</td><td>25</td></tr><tr><td>min damage</td><td>100</td></tr></table></td></table></td><td colspan='3'><strong>throw data</strong>: <table border='1'><tr><td>force min</td><td>30</td></tr><tr><td>force max</td><td>50</td></tr><tr><td>up angle min</td><td>20</td></tr><tr><td>direction angle random</td><td>10</td></tr><tr><td>up angle max</td><td>60</td></tr></table></td></table></td></table></td><td colspan='4'><strong>death explosion 03</strong>: <table border='1'><td colspan='1'><strong>area effect</strong>: <table border='1'><td colspan='3'><strong>area effect information</strong>: <table border='1'><td colspan='3'><strong>filter type</strong>: <table border='1'></table></td><td colspan='3'><strong>area type</strong>: <table border='1'></table></td><tr><td>radius</td><td>10</td></tr></table></td><td colspan='3'><strong>weapon damage</strong>: <table border='1'><td colspan='1'><strong>armour damage</strong>: <table border='1'><tr><td>armour piercing</td><td>5</td></tr><tr><td>max damage</td><td>450</td></tr><tr><td>morale damage</td><td>40</td></tr><tr><td>min damage</td><td>250</td></tr></table></td></table></td><td colspan='3'><strong>throw data</strong>: <table border='1'><tr><td>force min</td><td>25</td></tr><tr><td>force max</td><td>55</td></tr><tr><td>up angle min</td><td>20</td></tr><tr><td>direction angle random</td><td>10</td></tr><tr><td>up angle max</td><td>65</td></tr></table></td></table></td></table></td><td colspan='4'><strong>death explosion 04</strong>: <table border='1'><td colspan='1'><strong>area effect</strong>: <table border='1'><td colspan='3'><strong>area effect information</strong>: <table border='1'><td colspan='3'><strong>filter type</strong>: <table border='1'></table></td><td colspan='3'><strong>area type</strong>: <table border='1'></table></td><tr><td>radius</td><td>10</td></tr></table></td><td colspan='3'><strong>weapon damage</strong>: <table border='1'><td colspan='1'><strong>armour damage</strong>: <table border='1'><tr><td>armour piercing</td><td>5</td></tr><tr><td>max damage</td><td>650</td></tr><tr><td>morale damage</td><td>50</td></tr><tr><td>min damage</td><td>450</td></tr></table></td></table></td><td colspan='3'><strong>throw data</strong>: <table border='1'><tr><td>force min</td><td>35</td></tr><tr><td>force max</td><td>55</td></tr><tr><td>up angle min</td><td>25</td></tr><tr><td>direction angle random</td><td>10</td></tr><tr><td>up angle max</td><td>70</td></tr></table></td></table></td></table></td></table></td></table><h3>AbilityExt</h3><table border='1'><td colspan='2'><strong>abilities</strong>: <table border='1'><tr><td>ability 01</td><td>ability heavy tank dmged slow</td></tr></table></td></table><h3>SpecialAttackPhysicsExt</h3><table border='1'><tr><td>mass</td><td>65</td></tr></table><h3>EntityBlueprintExt</h3><table border='1'><tr><td>animator</td><td>Races/Dark Eldar/Troops/Ravager</td></tr></table><h3>SimEntityExt</h3><table border='1'></table><h3>ModifierExt</h3><table border='1'></table><h3>CoverExt</h3><table border='1'><td colspan='4'><strong>cover heavy</strong>: <table border='1'><td colspan='1'><strong>modifiers</strong>: <table border='1'><td colspan='3'><strong>modifier 01</strong>: <table border='1'><tr><td>value</td><td>0.8</td></tr></table></td><td colspan='3'><strong>modifier 02</strong>: <table border='1'><tr><td>value</td><td>1</td></tr></table></td><td colspan='3'><strong>modifier 03</strong>: <table border='1'></table></td></table></td></table></td><td colspan='4'><strong>cover light</strong>: <table border='1'><td colspan='1'><strong>modifiers</strong>: <table border='1'><td colspan='3'><strong>modifier 01</strong>: <table border='1'><tr><td>value</td><td>0.9</td></tr></table></td><td colspan='3'><strong>modifier 02</strong>: <table border='1'><tr><td>value</td><td>1</td></tr></table></td><td colspan='3'><strong>modifier 03</strong>: <table border='1'></table></td></table></td></table></td><td colspan='4'><strong>cover negative</strong>: <table border='1'><td colspan='1'><strong>modifiers</strong>: <table border='1'><td colspan='3'><strong>modifier 01</strong>: <table border='1'><tr><td>value</td><td>1.05</td></tr></table></td><td colspan='3'><strong>modifier 02</strong>: <table border='1'><tr><td>value</td><td>1</td></tr></table></td><td colspan='3'><strong>modifier 03</strong>: <table border='1'></table></td></table></td></table></td></table><h3>InfiltrationExt</h3><table border='1'></table><h3>ModifierApplyExt</h3><table border='1'><td colspan='2'><strong>modifiers</strong>: <table border='1'><td colspan='1'><strong>modifier 01</strong>: <table border='1'><tr><td>value</td><td>1.4</td></tr></table></td></table></td></table><h3>SyncdeathExt</h3><table border='1'></table>
+</body>
+</html>
