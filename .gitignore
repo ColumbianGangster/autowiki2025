@@ -9,3 +9,5 @@
 
 # Ignore LUA files
 *.lua
+
+.DS_Store
