@@ -800,7 +800,7 @@ fun processJsonFiles(inputDir: File, outputDir: File) {
 
 fun main() {
     val inputFolder = File("./rawjson/ebps/races/")
-    val outputFolder = File("ebps_html")
+    val outputFolder = File("docs")
 
     processJsonFiles(inputFolder, outputFolder)
 }

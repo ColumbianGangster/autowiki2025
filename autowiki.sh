@@ -8,6 +8,7 @@ KOTLIN_SCRIPT="dowpro_parser.kts"
 KOTLIN_SCRIPT2="dowpro_json_cleaner.kts"
 KOTLIN_SCRIPT3="dowpro_html.kts"
 KOTLIN_SCRIPT4="dowpro_entity_html.kts"
+KOTLIN_SCRIPT5="dowpro_index.kts"
 
 # Check if the necessary JAR files exist
 if [[ ! -f "$JAR_LUAJ" ]]; then
@@ -30,6 +31,7 @@ kotlinc -cp "$JAR_LUAJ:$JAR_JSON" -script "$KOTLIN_SCRIPT"
 kotlinc -cp "$JAR_GSON" -script "$KOTLIN_SCRIPT2"
 kotlinc -cp "$JAR_GSON" -script "$KOTLIN_SCRIPT3"
 kotlinc -cp "$JAR_GSON" -script "$KOTLIN_SCRIPT4"
+kotlinc -script "$KOTLIN_SCRIPT5"
 
 # Exit with the status of the last command
 exit $?
