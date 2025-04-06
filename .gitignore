@@ -1,0 +1,11 @@
+# Ignore JSON files
+*.json
+
+# Ignore JAR files
+*.jar
+
+# Ignore ZIP files
+*.zip
+
+# Ignore LUA files
+*.lua
