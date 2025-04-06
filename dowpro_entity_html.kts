@@ -509,6 +509,17 @@ data class Hardpoints (
   @SerializedName("hardpoint_18" ) var hardpoint18 : Hardpoint?,
   @SerializedName("hardpoint_19" ) var hardpoint19 : Hardpoint?,
   @SerializedName("hardpoint_20" ) var hardpoint20 : Hardpoint?,
+  @SerializedName("hardpoint_21" ) var hardpoint21 : Hardpoint?,
+  @SerializedName("hardpoint_22" ) var hardpoint22 : Hardpoint?,
+  @SerializedName("hardpoint_23" ) var hardpoint23 : Hardpoint?,
+  @SerializedName("hardpoint_24" ) var hardpoint24 : Hardpoint?,
+  @SerializedName("hardpoint_25" ) var hardpoint25 : Hardpoint?,
+  @SerializedName("hardpoint_26" ) var hardpoint26 : Hardpoint?,
+  @SerializedName("hardpoint_27" ) var hardpoint27 : Hardpoint?,
+  @SerializedName("hardpoint_28" ) var hardpoint28 : Hardpoint?,
+  @SerializedName("hardpoint_29" ) var hardpoint29 : Hardpoint?,
+  @SerializedName("hardpoint_30" ) var hardpoint30 : Hardpoint?,
+  @SerializedName("hardpoint_31" ) var hardpoint31 : Hardpoint?,
 )
 
 data class Hardpoint (
@@ -529,6 +540,31 @@ data class WeaponTable (
   @SerializedName("weapon_04" ) var weapon04 : Weapon?,
   @SerializedName("weapon_05" ) var weapon05 : Weapon?,
   @SerializedName("weapon_06" ) var weapon06 : Weapon?,
+  @SerializedName("weapon_07" ) var weapon07 : Weapon?,
+  @SerializedName("weapon_08" ) var weapon08 : Weapon?,
+  @SerializedName("weapon_09" ) var weapon09 : Weapon?,
+  @SerializedName("weapon_10" ) var weapon10 : Weapon?,
+  @SerializedName("weapon_11" ) var weapon11 : Weapon?,
+  @SerializedName("weapon_12" ) var weapon12 : Weapon?,
+  @SerializedName("weapon_13" ) var weapon13 : Weapon?,
+  @SerializedName("weapon_14" ) var weapon14 : Weapon?,
+  @SerializedName("weapon_15" ) var weapon15 : Weapon?,
+  @SerializedName("weapon_16" ) var weapon16 : Weapon?,
+  @SerializedName("weapon_17" ) var weapon17 : Weapon?,
+  @SerializedName("weapon_18" ) var weapon18 : Weapon?,
+  @SerializedName("weapon_19" ) var weapon19 : Weapon?,
+  @SerializedName("weapon_20" ) var weapon20 : Weapon?,
+  @SerializedName("weapon_21" ) var weapon21 : Weapon?,
+  @SerializedName("weapon_22" ) var weapon22 : Weapon?,
+  @SerializedName("weapon_23" ) var weapon23 : Weapon?,
+  @SerializedName("weapon_24" ) var weapon24 : Weapon?,
+  @SerializedName("weapon_25" ) var weapon25 : Weapon?,
+  @SerializedName("weapon_26" ) var weapon26 : Weapon?,
+  @SerializedName("weapon_27" ) var weapon27 : Weapon?,
+  @SerializedName("weapon_28" ) var weapon28 : Weapon?,
+  @SerializedName("weapon_29" ) var weapon29 : Weapon?,
+  @SerializedName("weapon_30" ) var weapon30 : Weapon?,
+  @SerializedName("weapon_31" ) var weapon31 : Weapon?,
 )
 
 data class Origin (
@@ -766,10 +802,16 @@ fun generateTable(data: Map<String, Any?>): String {
             htmlTable.append("<strong>${cleanString(key)}</strong>: ${generateTable(value as Map<String, Any?>)}")
             htmlTable.append("</td>")
         } else {
-            if (key == "reference" && value is String && !value.contains("type_armour\\")) {
+            val skipStrings = listOf(
+                "type_armour\\", 
+                "modifier\\",
+            ) // whatever strings you want
+            if (key == "reference" && value is String && skipStrings.none { value.contains(it) }) {
                 // Skip appending the row when the condition is met
                 // You can either leave it empty or do any specific action if required.
                 // Do nothing in this case as per your original logic.
+            } else if(key == "nil") {
+                // Sisters of battle penitent engine
             } else {
                 // For all other cases, render as a simple string
                 htmlTable.append("<tr><td>${cleanString(key)}</td><td>${cleanString(value?.toString() ?: "")}</td></tr>")
