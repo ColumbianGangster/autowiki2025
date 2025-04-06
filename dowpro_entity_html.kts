@@ -32,7 +32,22 @@ data class Root (
       @SerializedName("sight_ext"                  ) var sightExt                : SightExt?,
       @SerializedName("syncdeath_ext"              ) var syncdeathExt            : SyncdeathExt?,
       @SerializedName("health_ext"                 ) var healthExt               : HealthExt?,
-    )
+      // structure
+      @SerializedName("deep_strike_ext"         ) var deepStrikeExt         : DeepStrikeExt?,
+      @SerializedName("offline_ext"             ) var offlineExt            : OfflineExt?,
+      @SerializedName("squad_hold_ext"          ) var squadHoldExt          : SquadHoldExt?,
+      @SerializedName("structure_ext"           ) var structureExt          : StructureExt?,
+      @SerializedName("resource_ext"            ) var resourceExt           : ResourceExt?,
+      @SerializedName("addon_ext"               ) var addonExt              : AddonExt?,
+      @SerializedName("hq_ext"                  ) var hqExt                 : HqExt?,
+      @SerializedName("spawner_ext"             ) var spawnerExt            : SpawnerExt?,
+      @SerializedName("structure_buildable_ext" ) var structureBuildableExt : StructureBuildableExt?,
+      @SerializedName("research_ext"            ) var researchExt           : ResearchExt?,
+      @SerializedName("garrison_ext"            ) var garrisonExt           : GarrisonExt?, // eldar lp
+      @SerializedName("relocatee_ext"           ) var relocateeExt          : RelocateeExt?, // eldar power gen
+)
+
+
 
 data class MobExt (
   @SerializedName("reference" ) var reference : String? = null,
@@ -109,11 +124,21 @@ data class Abilities (
   @SerializedName("ability_07" ) var ability07 : String? = null,
   @SerializedName("ability_08" ) var ability08 : String? = null,
   @SerializedName("ability_09" ) var ability09 : String? = null,
+  @SerializedName("ability_10" ) var ability10 : String? = null,
 )
 
 data class AbilityExt (
   @SerializedName("reference" ) var reference : String?    = null,
   @SerializedName("abilities" ) var abilities : Abilities?,
+)
+
+data class AttachToTp (
+  @SerializedName("reference" ) var reference : String? = null
+)
+
+data class AttachTo (
+  @SerializedName("attach_to_tp" ) var attachToTp : AttachToTp?,
+  @SerializedName("active"       ) var active     : String?     = null,
 )
 
 data class MovingExt (
@@ -134,6 +159,7 @@ data class TypeExt (
   @SerializedName("reference"    ) var reference   : String?      = null,
   @SerializedName("type_surface" ) var typeSurface : TypeSurface?,
   @SerializedName("type_armour"  ) var typeArmour  : TypeArmour?,
+  @SerializedName("summon_teleport_destination" ) var summonTeleportDestination : String?      = null,
 
 )
 
@@ -155,13 +181,16 @@ data class EntityBlueprintExt (
 )
 
 data class SimEntityExt(
-    val reference: String?
+    val reference: String?,
+    @SerializedName("is_collide" ) var isCollide : String? = null, // structure
 )
 
 data class UiExt (
   @SerializedName("reference"         ) var reference        : String? = null,
   @SerializedName("minimap_teamcolor" ) var minimapTeamcolor : String? = null,
+  @SerializedName("ghost_hidden_until_seen" ) var ghostHiddenUntilSeen : String? = null,
   @SerializedName("speech_directory"  ) var speechDirectory  : String? = null,
+  @SerializedName("ghost_enable"            ) var ghostEnable          : String? = null,
   @SerializedName("minimap_enable"    ) var minimapEnable    : String? = null,
   @SerializedName("ui_hotkey_name"    ) var uiHotkeyName     : String? = null,
   @SerializedName("ui_info"           ) var uiInfo           : UiInfo?,
@@ -182,6 +211,10 @@ data class Required (
   @SerializedName("owned_count" ) var ownedCount : String? = null,
   @SerializedName("own_name"    ) var ownName    : String? = null,
   @SerializedName("global_addon_name" ) var globalAddonName : String? = null,
+  @SerializedName("required_structure_count" ) var requiredStructureCount : String? = null,
+  @SerializedName("this_structure_count"     ) var thisStructureCount     : String? = null,
+  @SerializedName("required_structure_name"  ) var requiredStructureName  : String? = null,
+  @SerializedName("max_cap"   ) var maxCap    : String? = null,
 )
 
 data class Requirements (
@@ -201,6 +234,65 @@ data class RequirementExt (
   @SerializedName("requirements" ) var requirements : Requirements?,
 )
 
+data class Addons (
+  @SerializedName("addon_01" ) var addon01 : String? = null,
+  @SerializedName("addon_02" ) var addon02 : String? = null,
+  @SerializedName("addon_03" ) var addon03 : String? = null,
+  @SerializedName("addon_04" ) var addon04 : String? = null,
+  @SerializedName("addon_05" ) var addon05 : String? = null,
+  @SerializedName("addon_06" ) var addon06 : String? = null,
+  @SerializedName("addon_07" ) var addon07 : String? = null,
+  @SerializedName("addon_08" ) var addon08 : String? = null,
+  @SerializedName("addon_09" ) var addon09 : String? = null,
+  @SerializedName("addon_10" ) var addon10 : String? = null,
+)
+
+data class AddonExt (
+  @SerializedName("reference" ) var reference : String? = null,
+  @SerializedName("addons"    ) var addons    : Addons?,
+)
+
+data class HqExt (
+  @SerializedName("reference" ) var reference : String? = null
+)
+
+data class SquadTable (
+  @SerializedName("squad_01" ) var squad01 : String? = null,
+  @SerializedName("squad_02" ) var squad02 : String? = null,
+  @SerializedName("squad_03" ) var squad03 : String? = null,
+  @SerializedName("squad_04" ) var squad04 : String? = null,
+  @SerializedName("squad_05" ) var squad05 : String? = null,
+  @SerializedName("squad_06" ) var squad06 : String? = null,
+  @SerializedName("squad_07" ) var squad07 : String? = null,
+  @SerializedName("squad_08" ) var squad08 : String? = null,
+  @SerializedName("squad_09" ) var squad09 : String? = null,
+  @SerializedName("squad_10" ) var squad10 : String? = null,
+  @SerializedName("squad_11" ) var squad11 : String? = null,
+  @SerializedName("squad_12" ) var squad12 : String? = null,
+  @SerializedName("squad_13" ) var squad13 : String? = null,
+  @SerializedName("squad_14" ) var squad14 : String? = null,
+  @SerializedName("squad_15" ) var squad15 : String? = null,
+  @SerializedName("squad_16" ) var squad16 : String? = null,
+  @SerializedName("squad_17" ) var squad17 : String? = null,
+  @SerializedName("squad_18" ) var squad18 : String? = null,
+  @SerializedName("squad_19" ) var squad19 : String? = null,
+  @SerializedName("squad_20" ) var squad20 : String? = null,
+  @SerializedName("squad_21" ) var squad21 : String? = null,
+)
+
+data class SpawnerExt (
+  @SerializedName("reference"   ) var reference  : String?     = null,
+  @SerializedName("squad_table" ) var squadTable : SquadTable?,
+)
+
+data class StructureBuildableExt (
+  @SerializedName("reference"                  ) var reference                : String? = null,
+  @SerializedName("build_menu_priority"        ) var buildMenuPriority        : String? = null,
+  @SerializedName("return_requisition_percent" ) var returnRequisitionPercent : String? = null,
+  @SerializedName("requisition_gift"    ) var requisitionGift   : String? = null,
+  @SerializedName("power_gift"          ) var powerGift         : String? = null,
+)
+
 data class HelpTextList (
   @SerializedName("text_01" ) var text01 : String? = null,
   @SerializedName("text_02" ) var text02 : String? = null,
@@ -209,6 +301,9 @@ data class HelpTextList (
   @SerializedName("text_05" ) var text05 : String? = null,
   @SerializedName("text_06" ) var text06 : String? = null,
   @SerializedName("text_07" ) var text07 : String? = null,
+  @SerializedName("text_08" ) var text08 : String? = null,
+  @SerializedName("text_09" ) var text09 : String? = null,
+  @SerializedName("text_10" ) var text10 : String? = null,
 )
 
 data class UiInfo (
@@ -346,10 +441,16 @@ data class ApplicationType (
   @SerializedName("reference" ) var reference : String? = null,
 )
 
+data class UsageType (
+  @SerializedName("reference" ) var reference : String? = null
+)
+
 data class Modifier(
   @SerializedName("reference"        ) var reference       : String?          = null,
   @SerializedName("application_type" ) var applicationType : ApplicationType?,
+  @SerializedName("target_type_name" ) var targetTypeName : String?    = null,
   @SerializedName("value"            ) var value           : String?          = null,
+  @SerializedName("usage_type"       ) var usageType      : UsageType?,
 )
 
 data class Modifiers (
@@ -382,6 +483,11 @@ data class CombatExt (
   @SerializedName("complex_upgrades" ) var complexUpgrades : String?     = null,
 )
 
+data class GarrisonExt (
+  @SerializedName("reference"                   ) var reference                 : String? = null,
+  @SerializedName("requisition_rate_multiplier" ) var requisitionRateMultiplier : String? = null,
+)
+
 data class Hardpoints (
   @SerializedName("hardpoint_01" ) var hardpoint01 : Hardpoint?,
   @SerializedName("hardpoint_02" ) var hardpoint02 : Hardpoint?,
@@ -392,6 +498,17 @@ data class Hardpoints (
   @SerializedName("hardpoint_07" ) var hardpoint07 : Hardpoint?,
   @SerializedName("hardpoint_08" ) var hardpoint08 : Hardpoint?,
   @SerializedName("hardpoint_09" ) var hardpoint09 : Hardpoint?,
+  @SerializedName("hardpoint_10" ) var hardpoint10 : Hardpoint?,
+  @SerializedName("hardpoint_11" ) var hardpoint11 : Hardpoint?,
+  @SerializedName("hardpoint_12" ) var hardpoint12 : Hardpoint?,
+  @SerializedName("hardpoint_13" ) var hardpoint13 : Hardpoint?,
+  @SerializedName("hardpoint_14" ) var hardpoint14 : Hardpoint?,
+  @SerializedName("hardpoint_15" ) var hardpoint15 : Hardpoint?,
+  @SerializedName("hardpoint_16" ) var hardpoint16 : Hardpoint?,
+  @SerializedName("hardpoint_17" ) var hardpoint17 : Hardpoint?,
+  @SerializedName("hardpoint_18" ) var hardpoint18 : Hardpoint?,
+  @SerializedName("hardpoint_19" ) var hardpoint19 : Hardpoint?,
+  @SerializedName("hardpoint_20" ) var hardpoint20 : Hardpoint?,
 )
 
 data class Hardpoint (
@@ -415,11 +532,15 @@ data class WeaponTable (
 )
 
 data class Origin (
-  @SerializedName("y" ) var y : String? = null
+  @SerializedName("x" ) var x : String? = null,
+  @SerializedName("y" ) var y : String? = null,
+  @SerializedName("z" ) var z : String? = null,
 )
 
 data class Muzzle (
-  @SerializedName("y" ) var y : String? = null
+  @SerializedName("x" ) var x : String? = null,
+  @SerializedName("y" ) var y : String? = null,
+  @SerializedName("z" ) var z : String? = null,
 )
 
 data class Weapon (
@@ -451,6 +572,117 @@ data class SyncdeathExt(
     val reference: String?
 )
 
+data class DeepStrikeExt (
+  @SerializedName("reference"               ) var reference            : String?     = null,
+  @SerializedName("click_event"             ) var clickEvent           : String?     = null,
+  @SerializedName("deep_strike_object_name" ) var deepStrikeObjectName : String?     = null,
+  @SerializedName("area_effect"             ) var areaEffect           : AreaEffect?,
+  @SerializedName("spawn_entity_event"      ) var spawnEntityEvent     : String?     = null,
+  @SerializedName("pathfind_size"           ) var pathfindSize         : String?     = null,
+  @SerializedName("spawn_ground_event"      ) var spawnGroundEvent     : String?     = null,
+  @SerializedName("fadeout_delay"           ) var fadeoutDelay         : String?     = null,
+  @SerializedName("is_summon"               ) var isSummon             : String?     = null
+)
+
+data class OfflineExt (
+  @SerializedName("reference"                          ) var reference                       : String? = null,
+  @SerializedName("pre_return_health_min_fraction"     ) var preReturnHealthMinFraction      : String? = null,
+  @SerializedName("transition_reverse_health_fraction" ) var transitionReverseHealthFraction : String? = null,
+  @SerializedName("return_transition_duration"         ) var returnTransitionDuration        : String? = null,
+  @SerializedName("health_transfer_min_fraction"       ) var healthTransferMinFraction       : String? = null
+)
+
+data class AcceptableType (
+  @SerializedName("reference" ) var reference : String? = null
+)
+
+data class SquadHoldExt (
+  @SerializedName("reference"                         ) var reference                    : String?           = null,
+  @SerializedName("nr_available_spots"                ) var nrAvailableSpots             : String?           = null,
+  @SerializedName("shared_with_other_same_type_units" ) var sharedWithOtherSameTypeUnits : String?           = null,
+  @SerializedName("unload_delay"                      ) var unloadDelay                  : String?           = null,
+  @SerializedName("load_event"                        ) var loadEvent                    : String?           = null,
+  @SerializedName("acceptable_type_01"                ) var acceptableType01             : AcceptableType?,
+  @SerializedName("underground_tunnel"  ) var undergroundTunnel : String?            = null, // IG HQ
+  @SerializedName("underground_icon"    ) var undergroundIcon   : String?            = null, // IG HQ
+  @SerializedName("underground_time"    ) var undergroundTime   : String?            = null, // IG HQ
+)
+
+data class StructureExt (
+  @SerializedName("reference"                    ) var reference                 : String? = null,
+  @SerializedName("control_structure_radius"     ) var controlStructureRadius    : String? = null,
+  @SerializedName("attach_to"                    ) var attachTo                  : AttachTo?,
+  @SerializedName("extra_no_build_buffer"        ) var extraNoBuildBuffer        : String? = null,
+  @SerializedName("snap_height_map"              ) var snapHeightMap             : String?   = null,
+  @SerializedName("control_structure_is"         ) var controlStructureIs        : String? = null,
+  @SerializedName("control_structure_use_allied" ) var controlStructureUseAllied : String? = null,
+  @SerializedName("control_structure_use"    ) var controlStructureUse    : String? = null,
+)
+
+data class ResourceExt (
+  @SerializedName("reference"                    ) var reference                 : String? = null,
+  @SerializedName("decay_to_lower_limit_time"    ) var decayToLowerLimitTime     : String? = null,
+  @SerializedName("power_per_second"             ) var powerPerSecond            : String? = null,
+  @SerializedName("decay_red_event"              ) var decayRedEvent             : String? = null,
+  @SerializedName("decay_delay_time"             ) var decayDelayTime            : String? = null,
+  @SerializedName("decay_amber_event"            ) var decayAmberEvent           : String? = null,
+  @SerializedName("decay_enabled"                ) var decayEnabled              : String? = null,
+  @SerializedName("decay_green_event"            ) var decayGreenEvent           : String? = null,
+  @SerializedName("decay_lower_limit_percentage" ) var decayLowerLimitPercentage : String? = null,
+  @SerializedName("requisition_per_second"       ) var requisitionPerSecond      : String? = null,
+)
+
+data class RelocationModifiers (
+  @SerializedName("modifier_02" ) var modifier02 : Modifier?,
+)
+
+data class RelocateeExt (
+  @SerializedName("reference"                ) var reference              : String?              = null,
+  @SerializedName("relocation_modifiers"     ) var relocationModifiers    : RelocationModifiers?,
+  @SerializedName("dummy_structure_name"     ) var dummyStructureName     : String?              = null,
+  @SerializedName("relocation_recharge_time" ) var relocationRechargeTime : String?              = null,
+  @SerializedName("relocation_time"          ) var relocationTime         : String?              = null
+
+)
+
+data class ResearchTable (
+  @SerializedName("research_01" ) var research01 : String? = null,
+  @SerializedName("research_02" ) var research02 : String? = null,
+  @SerializedName("research_03" ) var research03 : String? = null,
+  @SerializedName("research_04" ) var research04 : String? = null,
+  @SerializedName("research_05" ) var research05 : String? = null,
+  @SerializedName("research_06" ) var research06 : String? = null,
+  @SerializedName("research_07" ) var research07 : String? = null,
+  @SerializedName("research_08" ) var research08 : String? = null,
+  @SerializedName("research_09" ) var research09 : String? = null,
+  @SerializedName("research_10" ) var research10 : String? = null,
+  @SerializedName("research_11" ) var research11 : String? = null,
+  @SerializedName("research_12" ) var research12 : String? = null,
+  @SerializedName("research_13" ) var research13 : String? = null,
+  @SerializedName("research_14" ) var research14 : String? = null,
+  @SerializedName("research_15" ) var research15 : String? = null,
+  @SerializedName("research_16" ) var research16 : String? = null,
+  @SerializedName("research_17" ) var research17 : String? = null,
+  @SerializedName("research_18" ) var research18 : String? = null,
+  @SerializedName("research_19" ) var research19 : String? = null,
+  @SerializedName("research_20" ) var research20 : String? = null,
+  @SerializedName("research_21" ) var research21 : String? = null,
+  @SerializedName("research_22" ) var research22 : String? = null,
+  @SerializedName("research_23" ) var research23 : String? = null,
+  @SerializedName("research_24" ) var research24 : String? = null,
+  @SerializedName("research_25" ) var research25 : String? = null,
+  @SerializedName("research_26" ) var research26 : String? = null,
+  @SerializedName("research_27" ) var research27 : String? = null,
+  @SerializedName("research_28" ) var research28 : String? = null,
+  @SerializedName("research_29" ) var research29 : String? = null,
+  @SerializedName("research_30" ) var research30 : String? = null,
+)
+
+data class ResearchExt (
+  @SerializedName("reference" ) var reference : String? = null,
+  @SerializedName("research_table" ) var researchTable : ResearchTable?,
+)
+
 data class HealthExt (
       @SerializedName("armour_minimum"                  ) var armourMinimum                : String? = null,
       @SerializedName("max_repairers"                   ) var maxRepairers                 : String? = null, // vehicles
@@ -476,75 +708,11 @@ data class HealthExt (
       @SerializedName("spawn_death_blossom"             ) var spawnDeathBlossom            : String? = null,
       @SerializedName("spawn_usable_body_on_death"      ) var spawnUsableBodyOnDeath       : String? = null, // necron
       @SerializedName("death_event"                     ) var deathEvent                   : String? = null,
+      @SerializedName("keep_persistent_body"            ) var keepPersistentBody           : String? = null,
+      @SerializedName("post_death_event_delay" ) var postDeathEventDelay : String? = null, // eldar lp
 )
 
 val gson = Gson()
-
-// Function to generate HTML from the parsed JSON
-// fun generateHtmlFromJson(jsonString: String): String {
-//     // Deserialize JSON into Root object using Gson
-//     val root = gson.fromJson(jsonString, Root::class.java)
-//     println("Parsed object: $root")
-    
-//     // Generate HTML
-//     return """
-//         <!DOCTYPE html>
-//         <html>
-//         <head>
-//             <title>Unit Info</title>
-//             <meta charset="UTF-8">
-//         </head>
-//         <body>
-//             <h1>Unit: ${root.uiExt?.uiInfo?.screenNameId ?: "Unknown"}</h1>
-
-//             <h2>Help Texts</h2>
-//             <ul>
-//                 ${root.uiExt?.uiInfo?.helpTextList?.let {
-//                     listOfNotNull(
-//                         it.text01, it.text02, it.text03, it.text04, it.text05, it.text06, it.text07
-//                     ).joinToString("\n") { "<li>$it</li>" }
-//                 } ?: "<li>No help texts</li>"}
-//             </ul>
-
-//             <h2>Cost</h2>
-//             <p>Requisition: ${root.costExt?.timeCost?.cost?.requisition ?: "N/A"}</p>
-//             <p>Power: ${root.costExt?.timeCost?.cost?.power ?: "N/A"}</p>
-//             <p>Build Time (seconds): ${root.costExt?.timeCost?.timeSeconds ?: "N/A"}</p>
-
-//             <h2>Movement</h2>
-//             <p>Speed: ${root.movingExt?.speedMax ?: "N/A"}</p>
-
-//             <h2>Health Info</h2>
-//             <p>Hitpoints: ${root.healthExt?.hitpoints ?: "N/A"}</p>
-//             <p>Regeneration Rate: ${root.healthExt?.regenerationRate ?: "N/A"}</p>
-
-//             <h2>Special Attack Physics</h2>
-//             <p>Get Up Time: ${root.specialAttackPhysicsExt?.getUpTime ?: "N/A"}</p>
-//             <p>Mass: ${root.specialAttackPhysicsExt?.mass ?: "N/A"}</p>
-
-//             <h2>Melee Info</h2>
-//             <p>Charge Range: ${root.meleeExt?.chargeRange ?: "N/A"}</p>
-//             <p>Charge Modifiers:</p>
-//             <ul>
-//                 ${root.meleeExt?.chargeModifiers?.entries?.joinToString("\n") { 
-//                     "<li>${it.key}: ${it.value?.value ?: "N/A"}</li>" 
-//                 } ?: "<li>No charge modifiers</li>"}
-//             </ul>
-
-//             <h2>Type Info</h2>
-//             <p>Type Armour Reference: ${root.typeExt?.typeArmour?.reference ?: "N/A"}</p>
-
-//             <h2>Combat Info</h2>
-//             <p>Hardpoint 01:</p>
-//             <ul>
-//                 ${root.combatExt?.hardpoints?.hardpoint01?.weaponTable?.weapon01?.weapon ?: "N/A"}
-//                 <li>Weapon 01: ${root.combatExt?.hardpoints?.hardpoint01?.weaponTable?.weapon01?.weapon ?: "N/A"}</li>
-//                 <li>Weapon 02: ${root.combatExt?.hardpoints?.hardpoint01?.weaponTable?.weapon02?.weapon ?: "N/A"}</li>
-//             </ul>
-//         </body>
-//         </html>
-//     """.trimIndent()
-// }
 
 fun cleanString(input: String): String {
     // Replace underscores with spaces
@@ -653,6 +821,19 @@ fun generateHtml(root: Any?): String {
         htmlContent.append(generateSection("InfiltrationExt", root.infiltrationExt))
         htmlContent.append(generateSection("ModifierApplyExt", root.modifierApplyExt))
         htmlContent.append(generateSection("SyncdeathExt", root.syncdeathExt))
+        // structures
+        htmlContent.append(generateSection("DeepStrikeExt", root.deepStrikeExt))
+        htmlContent.append(generateSection("OfflineExt", root.offlineExt))
+        htmlContent.append(generateSection("SquadHoldExt", root.squadHoldExt))
+        htmlContent.append(generateSection("StructureExt", root.structureExt))
+        htmlContent.append(generateSection("ResourceExt", root.resourceExt))
+        htmlContent.append(generateSection("AddonExt", root.addonExt))
+        htmlContent.append(generateSection("HqExt", root.hqExt))
+        htmlContent.append(generateSection("SpawnerExt", root.spawnerExt))
+        htmlContent.append(generateSection("StructureBuildableExt", root.structureBuildableExt))
+        htmlContent.append(generateSection("ResearchExt", root.researchExt))
+        htmlContent.append(generateSection("GarrisonExt", root.garrisonExt))
+        htmlContent.append(generateSection("RelocateeExt", root.relocateeExt))
     } else {
         // For simple objects, generate a table
         if (map.isNotEmpty()) {
