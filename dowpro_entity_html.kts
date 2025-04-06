@@ -790,17 +790,39 @@ fun cleanString(input: String): String {
     return cleanedString
 }
 
+// Recursive function to check if the map only contains references
+fun isOnlyReferencesMap(value: Any?): Boolean {
+    return when {
+        value is Map<*, *> -> {
+            // Check if all values are sub-maps with reference pointing to "tables\\weapon_details.lua"
+            value.all { (_, subValue) ->
+                subValue is Map<*, *> && subValue["reference"] == "tables\\weapon_details.lua"
+            } || value.all { (_, subValue) -> isOnlyReferencesMap(subValue) }
+        }
+        else -> false
+    }
+}
 
 // Helper function to generate HTML table from a map
 fun generateTable(data: Map<String, Any?>): String {
     val htmlTable = StringBuilder("<table border='1'>")
     data.forEach { (key, value) ->
         // Check if the value is a Map, indicating a sub-map
-        if (value is Map<*, *>) {
+        val isEmptyOrHasEmptyValues = value is Map<*, *> && (value as Map<*, *>).run { 
+            // Check if the map is empty, has empty values, or has only references
+            this.isEmpty() || 
+            this.all { (_, subValue) -> subValue == null || subValue == "" } || 
+            this == emptyMap<Any, Any>() || 
+            isOnlyReferencesMap(value)
+        }
+
+        if (value is Map<*, *> && !isEmptyOrHasEmptyValues) {
             // If value is a Map, recursively generate a sub-table
             htmlTable.append("<td colspan='${data.size}'>")
             htmlTable.append("<strong>${cleanString(key)}</strong>: ${generateTable(value as Map<String, Any?>)}")
             htmlTable.append("</td>")
+        } else if (value is Map<*, *> && isEmptyOrHasEmptyValues) {
+            // dont add empty maps
         } else {
             val skipStrings = listOf(
                 "type_armour\\", 
