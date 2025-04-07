@@ -1,0 +1,182 @@
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 20px;
+                    padding: 10px;
+                    background-color: #f4f4f9;
+                }
+
+                h3 {
+                    color: #4CAF50;
+                    border-bottom: 2px solid #4CAF50;
+                    padding-bottom: 5px;
+                }
+
+                table {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    border-collapse: collapse;
+                    border: 1px solid #ddd;
+                }
+
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+
+                tr:hover {
+                    background-color: #ddd;
+                }
+
+                .section {
+                    margin-bottom: 30px;
+                }
+
+                .section h3 {
+                    margin-top: 20px;
+                }
+
+                /* Basic tooltip styling */
+                .tooltip {
+                    position: absolute;
+                    display: none;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    color: white;
+                    border-radius: 5px;
+                    padding: 10px;
+                    max-width: 300px;
+                    word-wrap: break-word;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    z-index: 1000;
+                }
+
+                /* Top Navigation Bar Styles */
+                nav {
+                    background-color: #333;
+                    padding: 10px 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                nav a {
+                    color: white;
+                    text-decoration: none;
+                    padding: 10px 15px;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    border-radius: 5px;
+                    transition: background-color 0.3s;
+                }
+
+                nav a:hover {
+                    background-color: #575757;
+                }
+
+                .logo {
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: white;
+                }
+
+                /* Right-aligned links (e.g., for other sections or logout) */
+                .nav-links {
+                    display: flex;
+                }
+
+                .nav-links a {
+                    margin-left: 20px;
+                }
+            </style>
+        </head>
+        <body>
+            <!-- Tooltip container -->
+    <div id="tooltip" class="tooltip"></div>
+            <h3>UiExt</h3><table border='1'><a href="/ebpextensions/ui_ext.html">ebpensions/ui </a><br>
+<tr><td>minimap teamcolor</td><td>true</td></tr><tr><td>speech directory</td><td>Speech\Races\Sisters\</td></tr><tr><td>minimap enable</td><td>true</td></tr><tr><td>ui hotkey name</td><td>sisters flamer</td></tr><td colspan='6'><strong>ui info</strong>: <table border='1'><td colspan='3'><strong>help text list</strong>: <table border='1'><tr><td>text 01</td><td>$97012 -- - Armored Heavy Infantry.</td></tr><tr><td>text 02</td><td>$4250159 -- - Squad leader, increases max morale by 50, melee and ranged damage by 5% and morale regen by 25% to the squad.</td></tr><tr><td>text 03</td><td>$4250089 -- - Can be upgraded with powerful weapons (Pristine Sanctuary Building).</td></tr><tr><td>text 04</td><td>$18010102 -- - Provides a global bonus to Faith resource growth rate.</td></tr><tr><td>text 05</td><td>$16510018 -- - RANGED: Short Range effective against Infantry, Heavy Infantry, Daemon and Light Fortified Building.</td></tr><tr><td>text 06</td><td>$16510168 --        - MELEE: Effective against Infantry, Heavy Infantry, Daemon and Light Fortified Building.</td></tr></table></td><tr><td>screen name id</td><td>$4250086 -- Veteran Superior</td></tr><tr><td>icon name</td><td>sisters icons/squad leader battle sisters</td></tr></table></td></table><h3>HealthExt</h3><table border='1'><tr><td>poison spread delay</td><td>2</td></tr><a href="/ebps/environment/gameplay/blood_splat.html">ebps/environment/gameplay/blood splat</a><br>
+<tr><td>pre death event delay</td><td>3</td></tr><tr><td>regeneration rate</td><td>0.5</td></tr><tr><td>armour</td><td>100</td></tr><tr><td>morale death</td><td>75</td></tr><a href="/ebpextensions/health_ext.html">ebpensions/health </a><br>
+<tr><td>poison immunity duration</td><td>30</td></tr><tr><td>hitpoints</td><td>400</td></tr><tr><td>poison event</td><td>art\events\Chaos\BiotoxBomb aura Large</td></tr><tr><td>poison damage duration</td><td>15</td></tr><tr><td>poison damage</td><td>0.8</td></tr><a href="/ebps/environment/gameplay/dark_eldar_death_blossom.html">ebps/environment/gameplay/dark eldar death blossom</a><br>
+<tr><td>death event</td><td>data:/art/events/unit death events/sink into ground.events</td></tr></table><h3>TypeExt</h3><table border='1'><a href="/ebpextensions/type_ext.html">ebpensions/type </a><br>
+<td colspan='2'><strong>type armour</strong>: <table border='1'><a href="/type_armour/tp_infantry_heavy_med.html">type armour/tp infantry heavy med</a><br>
+</table></td></table><h3>CostExt</h3><table border='1'><a href="/ebpextensions/cost_ext.html">ebpensions/cost </a><br>
+<td colspan='2'><strong>time cost</strong>: <table border='1'><td colspan='2'><strong>cost</strong>: <table border='1'><tr><td>requisition</td><td>60</td></tr><tr><td>power</td><td>10</td></tr></table></td><tr><td>time seconds</td><td>12</td></tr></table></td></table><h3>MovingExt</h3><table border='1'><a href="/ebpextensions/moving_ext.html">ebpensions/moving </a><br>
+<tr><td>speed max</td><td>17</td></tr></table><h3>SightExt</h3><table border='1'><a href="/ebpextensions/sight_ext.html">ebpensions/sight </a><br>
+<tr><td>sight radius</td><td>25</td></tr></table><h3>RequirementExt</h3><table border='1'><a href="/ebpextensions/requirement_ext.html">ebpensions/requirement </a><br>
+<td colspan='2'><strong>requirements</strong>: <table border='1'><td colspan='1'><strong>required 1</strong>: <table border='1'><a href="/requirements/required_structure.html">requirements/required structure</a><br>
+<a href="/ebps/races/sisters/structures/sisters_hq.html">ebps/races/sisters/structures/sisters hq</a><br>
+<tr><td>is display requirement</td><td>true</td></tr></table></td></table></td></table><h3>CombatExt</h3><table border='1'><a href="/ebpextensions/combat_ext.html">ebpensions/combat </a><br>
+<td colspan='3'><strong>hardpoints</strong>: <table border='1'><td colspan='16'><strong>hardpoint 01</strong>: <table border='1'><tr><td>horizontal aim motion variable name</td><td>Aim Horizontal Main</td></tr><tr><td>vertical aim motion variable name</td><td>Aim Vertical Main</td></tr><td colspan='6'><strong>weapon table</strong>: <table border='1'><td colspan='27'><strong>weapon 01</strong>: <table border='1'><a href="/weapon/sisters_bolt_pistol_veteran_superior.html">weapon/sisters bolt pistol veteran superior</a><br>
+<tr><td>name</td><td>Sisters of Battle Bolt Pistol</td></tr></table></td><td colspan='27'><strong>weapon 02</strong>: <table border='1'><a href="/weapon/sisters_inferno_pistol_veteran_superior.html">weapon/sisters inferno pistol veteran superior</a><br>
+<tr><td>name</td><td>Sisters of Battle Inferno Pistol</td></tr></table></td><td colspan='27'><strong>weapon 03</strong>: <table border='1'><a href="/weapon/chaos_dummy_weapon.html">weapon/chaos dummy weapon</a><br>
+<tr><td>name</td><td>No Weapon</td></tr></table></td><td colspan='27'><strong>weapon 04</strong>: <table border='1'><a href="/weapon/sisters_emperors_touch_battle_sister.html">weapon/sisters emperors touch battle sister</a><br>
+<tr><td>name</td><td>Sisters of Battle Emperor's Touch</td></tr></table></td><td colspan='27'><strong>weapon 05</strong>: <table border='1'><a href="/weapon/sisters_emperors_touch_battle_sister.html">weapon/sisters emperors touch battle sister</a><br>
+<tr><td>name</td><td>Sisters of Battle Emperor's Touch</td></tr></table></td><td colspan='27'><strong>weapon 06</strong>: <table border='1'><a href="/weapon/sisters_emperors_touch_battle_sister.html">weapon/sisters emperors touch battle sister</a><br>
+<tr><td>name</td><td>Sisters of Battle Emperor's Touch</td></tr></table></td></table></td><tr><td>attack motion variable name</td><td>Weapon Range Tracking Main</td></tr><tr><td>shoot motion variable name</td><td>Weapon Range Firing Main</td></tr><tr><td>hardpoint weapon variant motion name</td><td>Weapon Range Upgrade Main</td></tr></table></td><td colspan='16'><strong>hardpoint 02</strong>: <table border='1'><tr><td>horizontal aim motion variable name</td><td></td></tr><tr><td>vertical aim motion variable name</td><td></td></tr><td colspan='6'><strong>weapon table</strong>: <table border='1'><td colspan='23'><strong>weapon 01</strong>: <table border='1'><a href="/weapon/sisters_chain_sword_veteran_superior.html">weapon/sisters chain sword veteran superior</a><br>
+<tr><td>name</td><td>Sisters of Battle Chainsword</td></tr></table></td><td colspan='23'><strong>weapon 02</strong>: <table border='1'><a href="/weapon/sisters_power_sword_veteran_superior.html">weapon/sisters power sword veteran superior</a><br>
+<tr><td>name</td><td>Sisters of Battle Power Sword</td></tr></table></td></table></td><tr><td>attack motion variable name</td><td></td></tr><tr><td>shoot motion variable name</td><td></td></tr><tr><td>hardpoint weapon variant motion name</td><td>Weapon Melee Upgrade Main</td></tr></table></td></table></td><tr><td>complex upgrades</td><td>true</td></tr></table><h3>MeleeExt</h3><table border='1'><a href="/ebpextensions/melee_ext.html">ebpensions/melee </a><br>
+<tr><td>charge range</td><td>8</td></tr></table><h3>AbilityExt</h3><table border='1'><a href="/ebpextensions/ability_ext.html">ebpensions/ability </a><br>
+<td colspan='2'><strong>abilities</strong>: <table border='1'><a href="/abilities/sisters_leadership.html">abilities/sisters leadership</a><br>
+</table></td></table><h3>SpecialAttackPhysicsExt</h3><table border='1'><a href="/ebpextensions/special_attack_physics_ext.html">ebpensions/special attack physics </a><br>
+<tr><td>get up time</td><td>2.7</td></tr><tr><td>mass</td><td>12</td></tr></table><h3>EntityBlueprintExt</h3><table border='1'><a href="/ebpextensions/entity_blueprint_ext.html">ebpensions/entity blueprint </a><br>
+<tr><td>scale z</td><td>0.5</td></tr><tr><td>scale x</td><td>0.5</td></tr><tr><td>minimum update radius</td><td>1</td></tr><tr><td>animator</td><td>Races/Sisters/Troops/battle sister veteran superior kekoulis</td></tr></table><h3>SimEntityExt</h3><table border='1'><a href="/ebpextensions/sim_entity_ext.html">ebpensions/sim entity </a><br>
+</table><h3>ModifierExt</h3><table border='1'><a href="/ebpextensions/modifier_ext.html">ebpensions/modifier </a><br>
+</table><h3>SynckillExt</h3><table border='1'><a href="/ebpextensions/synckill_ext.html">ebpensions/synckill </a><br>
+</table><h3>CoverExt</h3><table border='1'><a href="/ebpextensions/cover_ext.html">ebpensions/cover </a><br>
+<td colspan='4'><strong>cover heavy</strong>: <table border='1'><td colspan='1'><strong>modifiers</strong>: <table border='1'><td colspan='2'><strong>modifier 02</strong>: <table border='1'><tr><td>value</td><td>0.75</td></tr></table></td><td colspan='2'><strong>modifier 03</strong>: <table border='1'><a href="/modifiers/cover_event_modifier.html">modifiers/cover event modifier</a><br>
+</table></td></table></td></table></td><td colspan='4'><strong>cover light</strong>: <table border='1'><td colspan='1'><strong>modifiers</strong>: <table border='1'><td colspan='1'><strong>modifier 03</strong>: <table border='1'><a href="/modifiers/cover_event_modifier.html">modifiers/cover event modifier</a><br>
+</table></td></table></td></table></td><td colspan='4'><strong>cover negative</strong>: <table border='1'><td colspan='1'><strong>modifiers</strong>: <table border='1'><td colspan='1'><strong>modifier 03</strong>: <table border='1'><a href="/modifiers/negative_cover_event_modifier.html">modifiers/negative cover event modifier</a><br>
+</table></td></table></td></table></td></table><h3>InfiltrationExt</h3><table border='1'><a href="/ebpextensions/infiltration_ext.html">ebpensions/infiltration </a><br>
+</table><h3>ModifierApplyExt</h3><table border='1'><a href="/ebpextensions/modifier_apply_ext.html">ebpensions/modifier apply </a><br>
+<td colspan='2'><strong>modifiers</strong>: <table border='1'><td colspan='1'><strong>modifier 01</strong>: <table border='1'><a href="/modifiers/enable_charge_modifiers.html">modifiers/enable charge modifiers</a><br>
+<tr><td>target type name</td><td>sisters veteran superior</td></tr><tr><td>value</td><td>-1</td></tr></table></td></table></td></table><h3>SyncdeathExt</h3><table border='1'><a href="/ebpextensions/syncdeath_ext.html">ebpensions/syncdeath </a><br>
+</table><h3>ResourceExt</h3><table border='1'><a href="/ebpextensions/resource_ext.html">ebpensions/resource </a><br>
+</table>
+                <script>
+                    // Function to fetch HTML content and display it in the tooltip
+                    function showTooltip(e, path) {
+                        var tooltip = document.getElementById('tooltip');
+                        
+                        // Fetch content from the target HTML page
+                        fetch(path)
+                            .then(response => response.text())
+                            .then(data => {
+                                // Set the tooltip content to the fetched HTML (or a part of it)
+                                tooltip.innerHTML = data.substring(0, 500); // Limit the length to prevent overflow
+                                tooltip.style.display = 'block';
+                                tooltip.style.left = e.pageX + 'px';  // Position the tooltip based on the mouse
+                                tooltip.style.top = e.pageY + 10 + 'px';  // Position with some offset
+                            })
+                            .catch(error => {
+                                console.error("Error loading file:", error);
+                            });
+                    }
+
+                    // Function to hide the tooltip when mouse leaves the link
+                    function hideTooltip() {
+                        var tooltip = document.getElementById('tooltip');
+                        tooltip.style.display = 'none';
+                    }
+
+                    // Add event listeners to links
+                    var links = document.querySelectorAll('.hover-link');
+                    links.forEach(link => {
+                        link.addEventListener('mouseover', function(e) {
+                            var path = link.getAttribute('data-path');  // Get the file path from data attribute
+                            showTooltip(e, path);  // Show the tooltip with content
+                        });
+
+                        link.addEventListener('mouseout', hideTooltip);  // Hide the tooltip when mouse leaves
+                    });
+                </script>
+        </body>
+        </html>

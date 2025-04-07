@@ -1,0 +1,181 @@
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 20px;
+                    padding: 10px;
+                    background-color: #f4f4f9;
+                }
+
+                h3 {
+                    color: #4CAF50;
+                    border-bottom: 2px solid #4CAF50;
+                    padding-bottom: 5px;
+                }
+
+                table {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    border-collapse: collapse;
+                    border: 1px solid #ddd;
+                }
+
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+
+                tr:hover {
+                    background-color: #ddd;
+                }
+
+                .section {
+                    margin-bottom: 30px;
+                }
+
+                .section h3 {
+                    margin-top: 20px;
+                }
+
+                /* Basic tooltip styling */
+                .tooltip {
+                    position: absolute;
+                    display: none;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    color: white;
+                    border-radius: 5px;
+                    padding: 10px;
+                    max-width: 300px;
+                    word-wrap: break-word;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    z-index: 1000;
+                }
+
+                /* Top Navigation Bar Styles */
+                nav {
+                    background-color: #333;
+                    padding: 10px 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                nav a {
+                    color: white;
+                    text-decoration: none;
+                    padding: 10px 15px;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    border-radius: 5px;
+                    transition: background-color 0.3s;
+                }
+
+                nav a:hover {
+                    background-color: #575757;
+                }
+
+                .logo {
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: white;
+                }
+
+                /* Right-aligned links (e.g., for other sections or logout) */
+                .nav-links {
+                    display: flex;
+                }
+
+                .nav-links a {
+                    margin-left: 20px;
+                }
+            </style>
+        </head>
+        <body>
+            <!-- Tooltip container -->
+    <div id="tooltip" class="tooltip"></div>
+            <h3>UiExt</h3><table border='1'><a href="/ebpextensions/ui_ext.html">ebpensions/ui </a><br>
+<tr><td>minimap teamcolor</td><td>true</td></tr><tr><td>ghost hidden until seen</td><td>true</td></tr><tr><td>speech directory</td><td>Speech/Races/Orks/Buildings/Pile of guns</td></tr><tr><td>ghost enable</td><td>true</td></tr><tr><td>minimap enable</td><td>true</td></tr><tr><td>ui hotkey name</td><td>ork pile o guns</td></tr><td colspan='9'><strong>ui info</strong>: <table border='1'><td colspan='3'><strong>help text list</strong>: <table border='1'><tr><td>text 01</td><td>$94462 -- - Allows weapon upgrades on most infantry squads.</td></tr><tr><td>text 02</td><td>$665257 -- - Allows for the building of Squad Leaders.</td></tr><tr><td>text 03</td><td>$94463 -- - Contains research to improve infantry squads, Nobz, Warboss, and Big Mek.</td></tr><tr><td>text 04</td><td>$15903856 -- - Increases the maximum squad size of Slugga Boys by 3, 'ard Boys by 2 and Gretchins and Shoota Boys by 1.</td></tr><tr><td>text 05</td><td>$16510150 --        - Turret weapon has Medium Range weapon effective against Infantry, Heavy Infantry and Daemon.</td></tr></table></td><tr><td>screen name id</td><td>$94460 -- Pile O Gunz!</td></tr><tr><td>icon name</td><td>ork icons/pile o gunz icon</td></tr></table></td><tr><td>ui index hint</td><td>6</td></tr></table><h3>HealthExt</h3><table border='1'><tr><td>max repairers</td><td>3</td></tr><tr><td>pre death event delay</td><td>1</td></tr><tr><td>regeneration decrease in combat</td><td>5</td></tr><tr><td>regeneration rate</td><td>5</td></tr><tr><td>armour</td><td>100</td></tr><tr><td>can be repaired</td><td>true</td></tr><a href="/ebpextensions/health_ext.html">ebpensions/health </a><br>
+<tr><td>hitpoints</td><td>1300</td></tr><tr><td>death event</td><td>unit death events/building death</td></tr><tr><td>post death event delay</td><td>0</td></tr></table><h3>TypeExt</h3><table border='1'><a href="/ebpextensions/type_ext.html">ebpensions/type </a><br>
+<td colspan='3'><strong>type surface</strong>: <table border='1'><a href="/type_surface/tp_heavy_metal_armour.html">type surface/tp heavy metal armour</a><br>
+</table></td><td colspan='3'><strong>type armour</strong>: <table border='1'><a href="/type_armour/tp_building_med.html">type armour/tp building med</a><br>
+</table></td></table><h3>CostExt</h3><table border='1'><a href="/ebpextensions/cost_ext.html">ebpensions/cost </a><br>
+<td colspan='2'><strong>time cost</strong>: <table border='1'><td colspan='2'><strong>cost</strong>: <table border='1'><tr><td>requisition</td><td>150</td></tr><tr><td>power</td><td>40</td></tr></table></td><tr><td>time seconds</td><td>40</td></tr></table></td></table><h3>SightExt</h3><table border='1'><a href="/ebpextensions/sight_ext.html">ebpensions/sight </a><br>
+<tr><td>sight radius</td><td>15</td></tr></table><h3>RequirementExt</h3><table border='1'><a href="/ebpextensions/requirement_ext.html">ebpensions/requirement </a><br>
+<td colspan='2'><strong>requirements</strong>: <table border='1'><td colspan='1'><strong>required 3</strong>: <table border='1'><a href="/requirements/required_structure_ratio.html">requirements/required structure ratio</a><br>
+<tr><td>required structure count</td><td>1</td></tr><tr><td>this structure count</td><td>1</td></tr><a href="/ebps/races/orks/structures/ork_hq.html">ebps/races/orks/structures/ork hq</a><br>
+</table></td></table></td></table><h3>CombatExt</h3><table border='1'><a href="/ebpextensions/combat_ext.html">ebpensions/combat </a><br>
+<td colspan='2'><strong>hardpoints</strong>: <table border='1'><td colspan='1'><strong>hardpoint 01</strong>: <table border='1'><tr><td>horizontal aim motion variable name</td><td>Aim Horizontal Left</td></tr><tr><td>vertical aim motion variable name</td><td>Aim Vertical Left</td></tr><td colspan='6'><strong>weapon table</strong>: <table border='1'><td colspan='1'><strong>weapon 01</strong>: <table border='1'><a href="/weapon/ork_shoota_turret.html">weapon/ork shoota turret</a><br>
+<tr><td>name</td><td>ork shoota turret</td></tr><td colspan='4'><strong>origin</strong>: <table border='1'><tr><td>x</td><td>0.07</td></tr><tr><td>y</td><td>5.53</td></tr><tr><td>z</td><td>0.72</td></tr></table></td><td colspan='4'><strong>muzzle</strong>: <table border='1'><tr><td>x</td><td>0.07</td></tr><tr><td>y</td><td>5.53</td></tr><tr><td>z</td><td>-0.08</td></tr></table></td></table></td></table></td><tr><td>attack motion variable name</td><td>Weapon Range Tracking Left</td></tr><tr><td>shoot motion variable name</td><td>Weapon Range Firing Left</td></tr><tr><td>hardpoint weapon variant motion name</td><td>Weapon Range Upgrade Left</td></tr></table></td></table></td></table><h3>DeathExplosionExt</h3><table border='1'><a href="/ebpextensions/death_explosion_ext.html">ebpensions/death explosion </a><br>
+<tr><td>chance</td><td>0.25</td></tr><td colspan='3'><strong>death explosions</strong>: <table border='1'><td colspan='1'><strong>death explosion 01</strong>: <table border='1'><tr><td>chance</td><td>100</td></tr><td colspan='2'><strong>area effect</strong>: <table border='1'><td colspan='3'><strong>area effect information</strong>: <table border='1'><td colspan='2'><strong>area type</strong>: <table border='1'><a href="/type_areaeffect/tp_area_effect_circle.html">type areaeffect/tp area effect circle</a><br>
+</table></td><tr><td>radius</td><td>20</td></tr></table></td><td colspan='3'><strong>weapon damage</strong>: <table border='1'><td colspan='1'><strong>armour damage</strong>: <table border='1'><tr><td>armour piercing</td><td>5</td></tr><tr><td>max damage</td><td>800</td></tr><tr><td>morale damage</td><td>20</td></tr><tr><td>min damage</td><td>100</td></tr></table></td></table></td><td colspan='3'><strong>throw data</strong>: <table border='1'><tr><td>force min</td><td>40</td></tr><tr><td>force max</td><td>60</td></tr><tr><td>up angle min</td><td>15</td></tr><tr><td>direction angle random</td><td>10</td></tr><tr><td>up angle max</td><td>45</td></tr></table></td></table></td></table></td></table></td></table><h3>AbilityExt</h3><table border='1'><a href="/ebpextensions/ability_ext.html">ebpensions/ability </a><br>
+<td colspan='2'><strong>abilities</strong>: <table border='1'><a href="/abilities/ork_pop_growth_increase_at_20.html">abilities/ork pop growth increase at 20</a><br>
+<a href="/abilities/ork_pop_growth_increase_at_30.html">abilities/ork pop growth increase at 30</a><br>
+<a href="/abilities/ork_pop_growth_increase_at_40.html">abilities/ork pop growth increase at 40</a><br>
+<a href="/abilities/ork_pile_o_gunz_sqd_scale.html">abilities/ork pile o gunz sqd scale</a><br>
+</table></td></table><h3>EntityBlueprintExt</h3><table border='1'><a href="/ebpextensions/entity_blueprint_ext.html">ebpensions/entity blueprint </a><br>
+<tr><td>scale z</td><td>3</td></tr><tr><td>scale x</td><td>3</td></tr><tr><td>animator</td><td>Races/Orks/Structures/pile o guns</td></tr></table><h3>SimEntityExt</h3><table border='1'><a href="/ebpextensions/sim_entity_ext.html">ebpensions/sim entity </a><br>
+<tr><td>is collide</td><td>true</td></tr></table><h3>ModifierExt</h3><table border='1'><a href="/ebpextensions/modifier_ext.html">ebpensions/modifier </a><br>
+</table><h3>InfiltrationExt</h3><table border='1'><a href="/ebpextensions/infiltration_ext.html">ebpensions/infiltration </a><br>
+</table><h3>ModifierApplyExt</h3><table border='1'><a href="/ebpextensions/modifier_apply_ext.html">ebpensions/modifier apply </a><br>
+<td colspan='2'><strong>modifiers</strong>: <table border='1'><td colspan='5'><strong>modifier 01</strong>: <table border='1'><a href="/modifiers/enable_infiltration.html">modifiers/enable infiltration</a><br>
+<tr><td>value</td><td>-1</td></tr></table></td><td colspan='5'><strong>modifier 02</strong>: <table border='1'><a href="/modifiers/max_troopers_squad_modifier.html">modifiers/max troopers squad modifier</a><br>
+<tr><td>target type name</td><td>ork squad shoota boy</td></tr><tr><td>value</td><td>1</td></tr></table></td><td colspan='5'><strong>modifier 03</strong>: <table border='1'><a href="/modifiers/max_troopers_squad_modifier.html">modifiers/max troopers squad modifier</a><br>
+<tr><td>target type name</td><td>ork squad slugga</td></tr><tr><td>value</td><td>3</td></tr></table></td><td colspan='5'><strong>modifier 04</strong>: <table border='1'><a href="/modifiers/max_troopers_squad_modifier.html">modifiers/max troopers squad modifier</a><br>
+<tr><td>target type name</td><td>ork squad ard boys</td></tr><tr><td>value</td><td>2</td></tr></table></td><td colspan='5'><strong>modifier 05</strong>: <table border='1'><a href="/modifiers/max_troopers_squad_modifier.html">modifiers/max troopers squad modifier</a><br>
+<tr><td>target type name</td><td>ork squad grot</td></tr><tr><td>value</td><td>1</td></tr></table></td></table></td></table><h3>SquadHoldExt</h3><table border='1'><a href="/ebpextensions/squad_hold_ext.html">ebpensions/squad hold </a><br>
+<tr><td>nr available spots</td><td>2</td></tr><tr><td>unload delay</td><td>5</td></tr></table><h3>StructureExt</h3><table border='1'><a href="/ebpextensions/structure_ext.html">ebpensions/structure </a><br>
+<tr><td>ra no build buffer</td><td>1</td></tr><tr><td>snap height map</td><td>true</td></tr><tr><td>control structure use</td><td>true</td></tr></table><h3>StructureBuildableExt</h3><table border='1'><a href="/ebpextensions/structure_buildable_ext.html">ebpensions/structure buildable </a><br>
+<tr><td>build menu priority</td><td>6</td></tr></table><h3>ResearchExt</h3><table border='1'><a href="/ebpextensions/research_ext.html">ebpensions/research </a><br>
+<td colspan='2'><strong>research table</strong>: <table border='1'><a href="/research/ork_research_burna.html">research/ork research burna</a><br>
+<a href="/research/ork_research_burna_2.html">research/ork research burna 2</a><br>
+<tr><td>research 07</td><td>ork research morechoppy</td></tr><tr><td>research 08</td><td>ork research evenmorechoppy</td></tr><tr><td>research 09</td><td>ork research powerclaw</td></tr><a href="/research/ork_wargear_upgrade_01_bigga_claw_wargear_research_mp.html">research/ork wargear upgrade 01 bigga claw wargear research mp</a><br>
+<a href="/research/ork_wargear_upgrade_02_mega_claw_wargear_research_mp.html">research/ork wargear upgrade 02 mega claw wargear research mp</a><br>
+<tr><td>research 12</td><td>ork research tougher bosses</td></tr><tr><td>research 13</td><td>ork research tougher bosses 2</td></tr><tr><td>research 14</td><td>ork research eavy armor boyz</td></tr><tr><td>research 15</td><td>ork research eavy armor boyz 2</td></tr><tr><td>research 17</td><td>ork research moredakka</td></tr><tr><td>research 18</td><td>ork research evenmoredakka</td></tr></table></td></table>
+                <script>
+                    // Function to fetch HTML content and display it in the tooltip
+                    function showTooltip(e, path) {
+                        var tooltip = document.getElementById('tooltip');
+                        
+                        // Fetch content from the target HTML page
+                        fetch(path)
+                            .then(response => response.text())
+                            .then(data => {
+                                // Set the tooltip content to the fetched HTML (or a part of it)
+                                tooltip.innerHTML = data.substring(0, 500); // Limit the length to prevent overflow
+                                tooltip.style.display = 'block';
+                                tooltip.style.left = e.pageX + 'px';  // Position the tooltip based on the mouse
+                                tooltip.style.top = e.pageY + 10 + 'px';  // Position with some offset
+                            })
+                            .catch(error => {
+                                console.error("Error loading file:", error);
+                            });
+                    }
+
+                    // Function to hide the tooltip when mouse leaves the link
+                    function hideTooltip() {
+                        var tooltip = document.getElementById('tooltip');
+                        tooltip.style.display = 'none';
+                    }
+
+                    // Add event listeners to links
+                    var links = document.querySelectorAll('.hover-link');
+                    links.forEach(link => {
+                        link.addEventListener('mouseover', function(e) {
+                            var path = link.getAttribute('data-path');  // Get the file path from data attribute
+                            showTooltip(e, path);  // Show the tooltip with content
+                        });
+
+                        link.addEventListener('mouseout', hideTooltip);  // Hide the tooltip when mouse leaves
+                    });
+                </script>
+        </body>
+        </html>

@@ -1,0 +1,185 @@
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 20px;
+                    padding: 10px;
+                    background-color: #f4f4f9;
+                }
+
+                h3 {
+                    color: #4CAF50;
+                    border-bottom: 2px solid #4CAF50;
+                    padding-bottom: 5px;
+                }
+
+                table {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    border-collapse: collapse;
+                    border: 1px solid #ddd;
+                }
+
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+
+                tr:hover {
+                    background-color: #ddd;
+                }
+
+                .section {
+                    margin-bottom: 30px;
+                }
+
+                .section h3 {
+                    margin-top: 20px;
+                }
+
+                /* Basic tooltip styling */
+                .tooltip {
+                    position: absolute;
+                    display: none;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    color: white;
+                    border-radius: 5px;
+                    padding: 10px;
+                    max-width: 300px;
+                    word-wrap: break-word;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    z-index: 1000;
+                }
+
+                /* Top Navigation Bar Styles */
+                nav {
+                    background-color: #333;
+                    padding: 10px 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                nav a {
+                    color: white;
+                    text-decoration: none;
+                    padding: 10px 15px;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    border-radius: 5px;
+                    transition: background-color 0.3s;
+                }
+
+                nav a:hover {
+                    background-color: #575757;
+                }
+
+                .logo {
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: white;
+                }
+
+                /* Right-aligned links (e.g., for other sections or logout) */
+                .nav-links {
+                    display: flex;
+                }
+
+                .nav-links a {
+                    margin-left: 20px;
+                }
+            </style>
+        </head>
+        <body>
+            <!-- Tooltip container -->
+    <div id="tooltip" class="tooltip"></div>
+            <h3>UiExt</h3><table border='1'><a href="/ebpextensions/ui_ext.html">ebpensions/ui </a><br>
+<tr><td>minimap teamcolor</td><td>true</td></tr><tr><td>ghost hidden until seen</td><td>true</td></tr><tr><td>speech directory</td><td>Speech/races/steel legion/buildings/sl relay station</td></tr><tr><td>ghost enable</td><td>true</td></tr><tr><td>minimap enable</td><td>true</td></tr><tr><td>ui hotkey name</td><td>steel legion armoury</td></tr><td colspan='9'><strong>ui info</strong>: <table border='1'><td colspan='3'><strong>help text list</strong>: <table border='1'><tr><td>text 01</td><td>$16014033 -- - Improves troops through upgrades.</td></tr><tr><td>text 02</td><td>$665257 -- - Allows for the building of Squad Leaders.</td></tr><tr><td>text 03</td><td>$16014034 -- - Able to garrison Stormtrooper squads to deepstrike in any area of the battlefield.</td></tr><tr><td>text 04</td><td>$16019450 -- - Increases the maximum squad size of Pioneer squads by 1.</td></tr></table></td><tr><td>screen name id</td><td>$16014030 -- Relay Station</td></tr><tr><td>icon name</td><td>steel legion icons/relay station</td></tr></table></td><tr><td>ui index hint</td><td>5</td></tr></table><h3>HealthExt</h3><table border='1'><tr><td>max repairers</td><td>3</td></tr><tr><td>pre death event delay</td><td>1</td></tr><tr><td>armour</td><td>100</td></tr><tr><td>can be repaired</td><td>true</td></tr><a href="/ebpextensions/health_ext.html">ebpensions/health </a><br>
+<tr><td>hitpoints</td><td>2500</td></tr><tr><td>death event</td><td>unit death events/building death</td></tr><tr><td>post death event delay</td><td>0</td></tr></table><h3>TypeExt</h3><table border='1'><a href="/ebpextensions/type_ext.html">ebpensions/type </a><br>
+<td colspan='3'><strong>type surface</strong>: <table border='1'><a href="/type_surface/tp_heavy_metal_armour.html">type surface/tp heavy metal armour</a><br>
+</table></td><td colspan='3'><strong>type armour</strong>: <table border='1'><a href="/type_armour/tp_building_med.html">type armour/tp building med</a><br>
+<tr><td>screen name id</td><td>$90102 -- Building</td></tr></table></td></table><h3>CostExt</h3><table border='1'><a href="/ebpextensions/cost_ext.html">ebpensions/cost </a><br>
+<td colspan='2'><strong>time cost</strong>: <table border='1'><td colspan='2'><strong>cost</strong>: <table border='1'><tr><td>requisition</td><td>150</td></tr><tr><td>power</td><td>40</td></tr></table></td><tr><td>time seconds</td><td>40</td></tr></table></td></table><h3>SightExt</h3><table border='1'><a href="/ebpextensions/sight_ext.html">ebpensions/sight </a><br>
+<tr><td>sight radius</td><td>15</td></tr></table><h3>RequirementExt</h3><table border='1'><a href="/ebpextensions/requirement_ext.html">ebpensions/requirement </a><br>
+<td colspan='2'><strong>requirements</strong>: <table border='1'><td colspan='1'><strong>required 2</strong>: <table border='1'><a href="/requirements/required_structure_ratio.html">requirements/required structure ratio</a><br>
+<tr><td>required structure count</td><td>1</td></tr><tr><td>this structure count</td><td>1</td></tr><a href="/ebps/races/steel_legion/structures/steel_legion_hq.html">ebps/races/steel legion/structures/steel legion hq</a><br>
+</table></td></table></td></table><h3>EntityBlueprintExt</h3><table border='1'><a href="/ebpextensions/entity_blueprint_ext.html">ebpensions/entity blueprint </a><br>
+<tr><td>scale z</td><td>3</td></tr><tr><td>scale x</td><td>3</td></tr><tr><td>animator</td><td>Races/Steel Legion/Structures/Relay Station</td></tr></table><h3>SimEntityExt</h3><table border='1'><a href="/ebpextensions/sim_entity_ext.html">ebpensions/sim entity </a><br>
+<tr><td>is collide</td><td>true</td></tr></table><h3>SummonExt</h3><table border='1'><a href="/ebpextensions/summon_ext.html">ebpensions/summon </a><br>
+</table><h3>ModifierExt</h3><table border='1'><a href="/ebpextensions/modifier_ext.html">ebpensions/modifier </a><br>
+</table><h3>ModifierApplyExt</h3><table border='1'><a href="/ebpextensions/modifier_apply_ext.html">ebpensions/modifier apply </a><br>
+<td colspan='2'><strong>modifiers</strong>: <table border='1'><td colspan='10'><strong>modifier 01</strong>: <table border='1'><a href="/modifiers/enable_infiltration.html">modifiers/enable infiltration</a><br>
+<tr><td>value</td><td>-1</td></tr></table></td><td colspan='10'><strong>modifier 03</strong>: <table border='1'><a href="/modifiers/max_troopers_squad_modifier.html">modifiers/max troopers squad modifier</a><br>
+<tr><td>target type name</td><td>steel legion squad pioneer</td></tr><tr><td>value</td><td>1</td></tr></table></td><td colspan='10'><strong>modifier 04</strong>: <table border='1'><a href="/modifiers/max_troopers_squad_modifier.html">modifiers/max troopers squad modifier</a><br>
+<tr><td>target type name</td><td>steel legion squad bullgryns</td></tr><tr><td>value</td><td>1</td></tr></table></td></table></td></table><h3>DeepStrikeExt</h3><table border='1'><a href="/ebpextensions/deep_strike_ext.html">ebpensions/deep strike </a><br>
+<tr><td>click event</td><td>Data:Art/Events/order confirm events/deep strike steel legion.events</td></tr><tr><td>deep strike object name</td><td>steel legion valkyrie</td></tr><td colspan='6'><strong>area effect</strong>: <table border='1'><td colspan='3'><strong>area effect information</strong>: <table border='1'><td colspan='2'><strong>area type</strong>: <table border='1'><a href="/type_areaeffect/tp_area_effect_circle.html">type areaeffect/tp area effect circle</a><br>
+</table></td><tr><td>radius</td><td>5</td></tr></table></td><td colspan='3'><strong>weapon damage</strong>: <table border='1'><td colspan='1'><strong>armour damage</strong>: <table border='1'><tr><td>min damage value</td><td>10</td></tr><tr><td>max damage</td><td>160</td></tr><tr><td>morale damage</td><td>50</td></tr><tr><td>min damage</td><td>140</td></tr></table></td></table></td><td colspan='3'><strong>throw data</strong>: <table border='1'><tr><td>force min</td><td>10</td></tr><tr><td>force max</td><td>60</td></tr><tr><td>up angle min</td><td>45</td></tr><tr><td>direction angle random</td><td>43</td></tr><tr><td>up angle max</td><td>90</td></tr></table></td></table></td><tr><td>pathfind size</td><td>2</td></tr><tr><td>fadeout delay</td><td>8</td></tr></table><h3>SquadHoldExt</h3><table border='1'><a href="/ebpextensions/squad_hold_ext.html">ebpensions/squad hold </a><br>
+<tr><td>nr available spots</td><td>2</td></tr><tr><td>unload delay</td><td>10</td></tr><td colspan='4'><strong>acceptable type 01</strong>: <table border='1'><a href="/type_transportable/transport_specialforce.html">type transportable/transport specialforce</a><br>
+</table></td></table><h3>StructureExt</h3><table border='1'><a href="/ebpextensions/structure_ext.html">ebpensions/structure </a><br>
+<tr><td>ra no build buffer</td><td>1.5</td></tr><tr><td>snap height map</td><td>true</td></tr><tr><td>control structure use</td><td>true</td></tr></table><h3>SpawnerExt</h3><table border='1'><a href="/ebpextensions/spawner_ext.html">ebpensions/spawner </a><br>
+</table><h3>StructureBuildableExt</h3><table border='1'><a href="/EBPExtensions/structure_buildable_ext.html">EBPExtensions/structure buildable </a><br>
+<tr><td>build menu priority</td><td>7</td></tr></table><h3>ResearchExt</h3><table border='1'><a href="/ebpextensions/research_ext.html">ebpensions/research </a><br>
+<td colspan='2'><strong>research table</strong>: <table border='1'><a href="/research/steel_legion_stormtrooper_elite.html">research/steel legion stormtrooper elite</a><br>
+<a href="/research/steel_legion_rough_rider_elite_research.html">research/steel legion rough rider elite research</a><br>
+<a href="/research/steel_legion_heavy_weapons_research.html">research/steel legion heavy weapons research</a><br>
+<a href="/research/steel_legion_health_upgrade_research.html">research/steel legion health upgrade research</a><br>
+<a href="/research/steel_legion_health_upgrade_research_2.html">research/steel legion health upgrade research 2</a><br>
+<a href="/research/steel_legion_accuracy_upgrade_research.html">research/steel legion accuracy upgrade research</a><br>
+<a href="/research/steel_legion_accuracy_upgrade_research_2.html">research/steel legion accuracy upgrade research 2</a><br>
+<a href="/research/steel_legion_sergeant_weapon_upgrade.html">research/steel legion sergeant weapon upgrade</a><br>
+<a href="/research/steel_legion_commander_upgrade_research.html">research/steel legion commander upgrade research</a><br>
+<a href="/research/steel_legion_commander_upgrade_research_2.html">research/steel legion commander upgrade research 2</a><br>
+<a href="/research/steel_legion_wargear_upgrade_02_power_claw_wargear_research.html">research/steel legion wargear upgrade 02 power claw wargear research</a><br>
+<a href="/research/steel_legion_wargear_upgrade_01_power_fist_wargear_research.html">research/steel legion wargear upgrade 01 power fist wargear research</a><br>
+<a href="/research/steel_legion_sergeant_weapon_upgrade_2.html">research/steel legion sergeant weapon upgrade 2</a><br>
+<a href="/research/steel_legion_heavy_weapons_research_2.html">research/steel legion heavy weapons research 2</a><br>
+<a href="/research/steel_legion_melta_research.html">research/steel legion melta research</a><br>
+</table></td></table>
+                <script>
+                    // Function to fetch HTML content and display it in the tooltip
+                    function showTooltip(e, path) {
+                        var tooltip = document.getElementById('tooltip');
+                        
+                        // Fetch content from the target HTML page
+                        fetch(path)
+                            .then(response => response.text())
+                            .then(data => {
+                                // Set the tooltip content to the fetched HTML (or a part of it)
+                                tooltip.innerHTML = data.substring(0, 500); // Limit the length to prevent overflow
+                                tooltip.style.display = 'block';
+                                tooltip.style.left = e.pageX + 'px';  // Position the tooltip based on the mouse
+                                tooltip.style.top = e.pageY + 10 + 'px';  // Position with some offset
+                            })
+                            .catch(error => {
+                                console.error("Error loading file:", error);
+                            });
+                    }
+
+                    // Function to hide the tooltip when mouse leaves the link
+                    function hideTooltip() {
+                        var tooltip = document.getElementById('tooltip');
+                        tooltip.style.display = 'none';
+                    }
+
+                    // Add event listeners to links
+                    var links = document.querySelectorAll('.hover-link');
+                    links.forEach(link => {
+                        link.addEventListener('mouseover', function(e) {
+                            var path = link.getAttribute('data-path');  // Get the file path from data attribute
+                            showTooltip(e, path);  // Show the tooltip with content
+                        });
+
+                        link.addEventListener('mouseout', hideTooltip);  // Hide the tooltip when mouse leaves
+                    });
+                </script>
+        </body>
+        </html>

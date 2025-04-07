@@ -23,7 +23,7 @@ fun main() {
             
             // Write the JSON to the output file
             outputFile.writeText(json.toString(4))  // Pretty print the JSON
-            // println("Created JSON file: ${outputFile.absolutePath}")
+            println("Created JSON file: ${outputFile.absolutePath}")
         } catch (e: Exception) {
             println("Error processing file ${luaFile.absolutePath}: ${e.message}")
         }
@@ -32,18 +32,39 @@ fun main() {
 
 // Recursively get all Lua files from a directory and its subdirectories
 fun getLuaFiles(directoryPath: String): List<File> {
+    val filesToExclude = listOf(
+        "_dxp3_", "_hg_", "_sp_", "_dxp3.", "_hg.", "_sp.", "nis.",
+    )
+
+    val directoriesToInclude = listOf(
+        "abilities", "addons", "ebps", "races",
+        "chaos", "dark_eldar", "eldar", "guard", "necron",
+        "ork", "sisters", "space_marine", "steel_legion", "tau", "tyranid",
+        "structures", "troops", "modifiers", "requirements", "research", "sbps"
+    )
+
+    val directoriesToExclude = listOf(
+        "environment",
+    )
+
     val directory = File(directoryPath)
     val luaFiles = mutableListOf<File>()
 
-    // Check if the directory exists and is a valid directory
     if (directory.exists() && directory.isDirectory) {
         directory.walkTopDown().forEach { file ->
-            if (file.isFile && file.extension == "lua") {
+            if (
+                file.isFile &&
+                file.extension == "lua" &&
+                filesToExclude.none { file.name.contains(it) } &&
+                file.parentFile?.name in directoriesToInclude && 
+                directoriesToExclude.none { includeDir ->
+                    file.relativeTo(directory).path.contains(includeDir)
+                }
+            ) {
                 luaFiles.add(file)
             }
         }
     }
-
     return luaFiles
 }
 

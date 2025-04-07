@@ -1,4 +1,5 @@
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.google.gson.annotations.SerializedName
 import com.google.gson.reflect.TypeToken
 import java.io.File
@@ -525,7 +526,7 @@ data class Hardpoints (
 data class Hardpoint (
   @SerializedName("horizontal_aim_motion_variable_name"  ) var horizontalAimMotionVariableName  : String?      = null,
   @SerializedName("vertical_aim_motion_variable_name"    ) var verticalAimMotionVariableName    : String?      = null,
-  @SerializedName("weapon_table"                         ) var weaponTable                      : WeaponTable?,
+  @SerializedName("weapon_table"                         ) var weaponTable                      : WeaponTable? = null,
   @SerializedName("attack_motion_variable_name"          ) var attackMotionVariableName         : String?      = null,
   @SerializedName("shoot_motion_variable_name"           ) var shootMotionVariableName          : String?      = null,
   @SerializedName("hardpoint_weapon_variant_motion_name" ) var hardpointWeaponVariantMotionName : String?      = null,
@@ -580,7 +581,6 @@ data class Muzzle (
 )
 
 data class Weapon (
-
   @SerializedName("weapon"                      ) var weapon                  : String?,
   @SerializedName("name_for_this_weapon_choice" ) var nameForThisWeaponChoice : String?,
   @SerializedName("origin"                      ) var origin                  : Origin?,
@@ -748,7 +748,21 @@ data class HealthExt (
       @SerializedName("post_death_event_delay" ) var postDeathEventDelay : String? = null, // eldar lp
 )
 
-val gson = Gson()
+val gson = GsonBuilder().setLenient().create()
+
+fun generateHtmlLink(path: String): String {
+    // Initialize the HTML result
+    val htmlBuilder = StringBuilder()
+        // Convert backslashes to forward slashes for URLs
+        val filePathUrl = path.replace("\\", "/").replace(".lua", ".html").replace("[[", "").replace("]]", "")
+        // Create a hyperlink in HTML format
+        htmlBuilder.append("<a href=\"/$filePathUrl\">${cleanString(filePathUrl)}</a><br>\n")
+        // htmlBuilder.append("<a href=\"file:///Users/bertrandbrompton/Documents/Warhammer%2040k/docs/$filePathUrl\">${cleanString(filePathUrl)}</a><br>\n")
+        // htmlBuilder.append("<a href=\"javascript:void(0)\" class=\"hover-link\" data-path=\"/$filePathUrl\">${cleanString(filePathUrl)}</a><br>\n")
+
+    // Return the final HTML string
+    return htmlBuilder.toString()
+}
 
 fun cleanString(input: String): String {
     // Replace underscores with spaces
@@ -765,9 +779,7 @@ fun cleanString(input: String): String {
     cleanedString = cleanedString.replace("name for this weapon choice", "name")
 
     // Apply further cleaning if necessary:
-    if (cleanedString.contains(".lua")) {
-        cleanedString = cleanedString.replace(".lua", "")
-    }
+    cleanedString = cleanedString.replace(".lua", "").replace(".html", "")
 
     if (cleanedString.contains("[[") || cleanedString.contains("]]")) {
         cleanedString = cleanedString.replace("[[", "").replace("]]", "")
@@ -816,7 +828,9 @@ fun generateTable(data: Map<String, Any?>): String {
             isOnlyReferencesMap(value)
         }
 
-        if (value is Map<*, *> && !isEmptyOrHasEmptyValues) {
+        if (value is String && value.contains(".lua")) {
+            htmlTable.append(generateHtmlLink(value))
+        } else if (value is Map<*, *> && !isEmptyOrHasEmptyValues) {
             // If value is a Map, recursively generate a sub-table
             htmlTable.append("<td colspan='${data.size}'>")
             htmlTable.append("<strong>${cleanString(key)}</strong>: ${generateTable(value as Map<String, Any?>)}")
@@ -926,6 +940,8 @@ fun generateHtmlFromJson2(jsonString: String): String {
     return """
         <html>
         <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <style>
                 body {
                     font-family: Arial, sans-serif;
@@ -969,6 +985,20 @@ fun generateHtmlFromJson2(jsonString: String): String {
                     margin-top: 20px;
                 }
 
+                /* Basic tooltip styling */
+                .tooltip {
+                    position: absolute;
+                    display: none;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    color: white;
+                    border-radius: 5px;
+                    padding: 10px;
+                    max-width: 300px;
+                    word-wrap: break-word;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    z-index: 1000;
+                }
+
                 /* Top Navigation Bar Styles */
                 nav {
                     background-color: #333;
@@ -1010,7 +1040,46 @@ fun generateHtmlFromJson2(jsonString: String): String {
             </style>
         </head>
         <body>
+            <!-- Tooltip container -->
+    <div id="tooltip" class="tooltip"></div>
             ${generateHtml(root)}
+                <script>
+                    // Function to fetch HTML content and display it in the tooltip
+                    function showTooltip(e, path) {
+                        var tooltip = document.getElementById('tooltip');
+                        
+                        // Fetch content from the target HTML page
+                        fetch(path)
+                            .then(response => response.text())
+                            .then(data => {
+                                // Set the tooltip content to the fetched HTML (or a part of it)
+                                tooltip.innerHTML = data.substring(0, 500); // Limit the length to prevent overflow
+                                tooltip.style.display = 'block';
+                                tooltip.style.left = e.pageX + 'px';  // Position the tooltip based on the mouse
+                                tooltip.style.top = e.pageY + 10 + 'px';  // Position with some offset
+                            })
+                            .catch(error => {
+                                console.error("Error loading file:", error);
+                            });
+                    }
+
+                    // Function to hide the tooltip when mouse leaves the link
+                    function hideTooltip() {
+                        var tooltip = document.getElementById('tooltip');
+                        tooltip.style.display = 'none';
+                    }
+
+                    // Add event listeners to links
+                    var links = document.querySelectorAll('.hover-link');
+                    links.forEach(link => {
+                        link.addEventListener('mouseover', function(e) {
+                            var path = link.getAttribute('data-path');  // Get the file path from data attribute
+                            showTooltip(e, path);  // Show the tooltip with content
+                        });
+
+                        link.addEventListener('mouseout', hideTooltip);  // Hide the tooltip when mouse leaves
+                    });
+                </script>
         </body>
         </html>
     """.trimIndent()
@@ -1044,7 +1113,7 @@ fun processJsonFiles(inputDir: File, outputDir: File) {
 }
 
 fun main() {
-    val inputFolder = File("./rawjson/ebps/races/")
+    val inputFolder = File("./rawjson/")
     val outputFolder = File("docs")
 
     processJsonFiles(inputFolder, outputFolder)

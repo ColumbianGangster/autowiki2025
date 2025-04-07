@@ -29,7 +29,7 @@ fun processDirectory(inputDir: File, outputDir: File) {
             val htmlContent = generateHtml(jsonElement, file.nameWithoutExtension)
             
             outputFile.writeText(htmlContent)
-            println("Generated: ${outputFile.absolutePath}")
+            // println("Generated: ${outputFile.absolutePath}")
         }
     }
 }

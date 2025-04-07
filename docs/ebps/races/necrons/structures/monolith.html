@@ -1,0 +1,193 @@
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 20px;
+                    padding: 10px;
+                    background-color: #f4f4f9;
+                }
+
+                h3 {
+                    color: #4CAF50;
+                    border-bottom: 2px solid #4CAF50;
+                    padding-bottom: 5px;
+                }
+
+                table {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    border-collapse: collapse;
+                    border: 1px solid #ddd;
+                }
+
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+
+                tr:hover {
+                    background-color: #ddd;
+                }
+
+                .section {
+                    margin-bottom: 30px;
+                }
+
+                .section h3 {
+                    margin-top: 20px;
+                }
+
+                /* Basic tooltip styling */
+                .tooltip {
+                    position: absolute;
+                    display: none;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    color: white;
+                    border-radius: 5px;
+                    padding: 10px;
+                    max-width: 300px;
+                    word-wrap: break-word;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    z-index: 1000;
+                }
+
+                /* Top Navigation Bar Styles */
+                nav {
+                    background-color: #333;
+                    padding: 10px 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                nav a {
+                    color: white;
+                    text-decoration: none;
+                    padding: 10px 15px;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    border-radius: 5px;
+                    transition: background-color 0.3s;
+                }
+
+                nav a:hover {
+                    background-color: #575757;
+                }
+
+                .logo {
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: white;
+                }
+
+                /* Right-aligned links (e.g., for other sections or logout) */
+                .nav-links {
+                    display: flex;
+                }
+
+                .nav-links a {
+                    margin-left: 20px;
+                }
+            </style>
+        </head>
+        <body>
+            <!-- Tooltip container -->
+    <div id="tooltip" class="tooltip"></div>
+            <h3>UiExt</h3><table border='1'><a href="/ebpextensions/ui_ext.html">ebpensions/ui </a><br>
+<tr><td>minimap teamcolor</td><td>true</td></tr><tr><td>ghost hidden until seen</td><td>true</td></tr><tr><td>speech directory</td><td>Speech\Races\Necron\Buildings\Monolith</td></tr><tr><td>ghost enable</td><td>true</td></tr><tr><td>minimap enable</td><td>true</td></tr><tr><td>ui hotkey name</td><td>necron monolith</td></tr><td colspan='8'><strong>ui info</strong>: <table border='1'><td colspan='3'><strong>help text list</strong>: <table border='1'><tr><td>text 01</td><td>$15904864 -- - Necron Headquarters building.</td></tr><tr><td>text 02</td><td>$15905148 -- - Produces: Builder Scarabs, Necron Warriors, Flayed Ones and the Essence of the Deceiver.</td></tr><tr><td>text 03</td><td>$705052 -- - Bring the Monolith's systems back online to summon more powerful Necron units and increase the maximum squad size.</td></tr><tr><td>text 04</td><td>$705053 -- - Projects a Control Area around itself, allowing other buildings to be built near it.</td></tr><tr><td>text 05</td><td>$705054 -- - Allows the reinforcement of Necron Warriors, Flayed Ones, Wraiths and Immortal squads in proximity.</td></tr><tr><td>text 06</td><td>$705357 -- - Selectable target to teleport for any Necron squads through the Necron Summoning ability.</td></tr><tr><td>text 07</td><td>$18010342 -- - Increases the Squad Cap by 2.</td></tr><tr><td>text 08</td><td>$18010427 -- - Increases the Vehicle Cap by 1.</td></tr></table></td><tr><td>screen name id</td><td>$696100 -- Necron Monolith</td></tr><tr><td>icon name</td><td>necron icons/necron monolith icon</td></tr></table></td></table><h3>HealthExt</h3><table border='1'><tr><td>max repairers</td><td>3</td></tr><tr><td>regeneration decrease in combat</td><td>2</td></tr><tr><td>regeneration rate</td><td>2</td></tr><tr><td>armour</td><td>100</td></tr><tr><td>can be repaired</td><td>true</td></tr><a href="/ebpextensions/health_ext.html">ebpensions/health </a><br>
+<tr><td>hitpoints</td><td>4000</td></tr><tr><td>death event</td><td>unit death events/building death</td></tr><tr><td>keep persistent body</td><td>false</td></tr></table><h3>TypeExt</h3><table border='1'><a href="/ebpextensions/type_ext.html">ebpensions/type </a><br>
+<td colspan='3'><strong>type surface</strong>: <table border='1'><a href="/type_surface/tp_heavy_metal_armour.html">type surface/tp heavy metal armour</a><br>
+</table></td><td colspan='3'><strong>type armour</strong>: <table border='1'><a href="/type_armour/tp_building_high.html">type armour/tp building high</a><br>
+</table></td></table><h3>CostExt</h3><table border='1'><a href="/ebpextensions/cost_ext.html">ebpensions/cost </a><br>
+<td colspan='2'><strong>time cost</strong>: <table border='1'><td colspan='2'><strong>cost</strong>: <table border='1'><tr><td>power</td><td>200</td></tr></table></td><tr><td>time seconds</td><td>60</td></tr></table></td></table><h3>SightExt</h3><table border='1'><a href="/ebpextensions/sight_ext.html">ebpensions/sight </a><br>
+<tr><td>sight radius</td><td>20</td></tr></table><h3>RequirementExt</h3><table border='1'><a href="/ebpextensions/requirement_ext.html">ebpensions/requirement </a><br>
+<td colspan='2'><strong>requirements</strong>: <table border='1'><td colspan='1'><strong>required 1</strong>: <table border='1'><a href="/requirements/required_cap.html">requirements/required cap</a><br>
+<tr><td>max cap</td><td>2</td></tr></table></td></table></td></table><h3>AbilityExt</h3><table border='1'><a href="/ebpextensions/ability_ext.html">ebpensions/ability </a><br>
+<td colspan='2'><strong>abilities</strong>: <table border='1'><a href="/abilities/hq_maxpop_increase.html">abilities/hq maxpop increase</a><br>
+<a href="/abilities/necron_hq_sqd_bonus_1.html">abilities/necron hq sqd bonus 1</a><br>
+<a href="/abilities/necron_hq_sqd_bonus_2.html">abilities/necron hq sqd bonus 2</a><br>
+<a href="/abilities/necron_hq_sqd_bonus_3.html">abilities/necron hq sqd bonus 3</a><br>
+<a href="/abilities/necron_hq_sqd_scale_1.html">abilities/necron hq sqd scale 1</a><br>
+<a href="/abilities/necron_hq_sqd_scale_2.html">abilities/necron hq sqd scale 2</a><br>
+<a href="/abilities/necron_hq_sqd_scale_3.html">abilities/necron hq sqd scale 3</a><br>
+<a href="/abilities/necron_listening_post_teleport.html">abilities/necron listening post teleport</a><br>
+<a href="/abilities/necron_monolith_unit_reinforcement_enable.html">abilities/necron monolith unit reinforcement enable</a><br>
+<a href="/abilities/necron_listening_post_teleport_single_squad.html">abilities/necron listening post teleport single squad</a><br>
+</table></td></table><h3>EntityBlueprintExt</h3><table border='1'><a href="/ebpextensions/entity_blueprint_ext.html">ebpensions/entity blueprint </a><br>
+<tr><td>scale z</td><td>6</td></tr><tr><td>scale x</td><td>6</td></tr><tr><td>minimum update radius</td><td>35</td></tr><tr><td>animator</td><td>Races/Necrons/Structures/Necron Monolith</td></tr></table><h3>SimEntityExt</h3><table border='1'><a href="/ebpextensions/sim_entity_ext.html">ebpensions/sim entity </a><br>
+<tr><td>is collide</td><td>true</td></tr></table><h3>ModifierExt</h3><table border='1'><a href="/ebpextensions/modifier_ext.html">ebpensions/modifier </a><br>
+</table><h3>InfiltrationExt</h3><table border='1'><a href="/ebpextensions/infiltration_ext.html">ebpensions/infiltration </a><br>
+</table><h3>ModifierApplyExt</h3><table border='1'><a href="/ebpextensions/modifier_apply_ext.html">ebpensions/modifier apply </a><br>
+<td colspan='2'><strong>modifiers</strong>: <table border='1'><td colspan='3'><strong>modifier 01</strong>: <table border='1'><a href="/modifiers/enable_infiltration.html">modifiers/enable infiltration</a><br>
+<tr><td>value</td><td>-1</td></tr></table></td><td colspan='3'><strong>modifier 02</strong>: <table border='1'><a href="/modifiers/support_cap_player_modifier.html">modifiers/support cap player modifier</a><br>
+<tr><td>value</td><td>1</td></tr></table></td><td colspan='3'><strong>modifier 03</strong>: <table border='1'><a href="/modifiers/squad_cap_player_modifier.html">modifiers/squad cap player modifier</a><br>
+<tr><td>value</td><td>2</td></tr></table></td></table></td></table><h3>DeepStrikeExt</h3><table border='1'><a href="/ebpextensions/deep_strike_ext.html">ebpensions/deep strike </a><br>
+<tr><td>click event</td><td>necron/fo deepstrike decal</td></tr><tr><td>deep strike object name</td><td>Deep Strike</td></tr><td colspan='9'><strong>area effect</strong>: <table border='1'><td colspan='2'><strong>area effect information</strong>: <table border='1'><td colspan='3'><strong>filter type</strong>: <table border='1'><a href="/type_areafilter/tp_area_filter_enemy.html">type areafilter/tp area filter enemy</a><br>
+</table></td><td colspan='3'><strong>area type</strong>: <table border='1'><a href="/type_areaeffect/tp_area_effect_circle.html">type areaeffect/tp area effect circle</a><br>
+</table></td><tr><td>radius</td><td>5</td></tr></table></td><td colspan='2'><strong>throw data</strong>: <table border='1'><tr><td>force min</td><td>15</td></tr><tr><td>force max</td><td>60</td></tr><tr><td>up angle min</td><td>45</td></tr><tr><td>direction angle random</td><td>43</td></tr><tr><td>up angle max</td><td>90</td></tr></table></td></table></td><tr><td>spawn entity event</td><td>necron/necron deepstrike</td></tr><tr><td>pathfind size</td><td>1</td></tr><tr><td>spawn ground event</td><td>unit ability fx/deep strike spawn ground</td></tr><tr><td>fadeout delay</td><td>5</td></tr><tr><td>is summon</td><td>true</td></tr></table><h3>OfflineExt</h3><table border='1'><a href="/ebpextensions/offline_ext.html">ebpensions/offline </a><br>
+<tr><td>pre return health min fraction</td><td>0.2</td></tr><tr><td>transition reverse health fraction</td><td>0.25</td></tr><tr><td>return transition duration</td><td>12</td></tr><tr><td>health transfer min fraction</td><td>0.3</td></tr></table><h3>SquadHoldExt</h3><table border='1'><a href="/ebpextensions/squad_hold_ext.html">ebpensions/squad hold </a><br>
+<tr><td>nr available spots</td><td>2</td></tr><tr><td>shared with other same type units</td><td>true</td></tr><tr><td>unload delay</td><td>12</td></tr><tr><td>load event</td><td>Unit FX/appear fx</td></tr><td colspan='6'><strong>acceptable type 01</strong>: <table border='1'><a href="/type_transportable/transport_terminator.html">type transportable/transport terminator</a><br>
+</table></td></table><h3>StructureExt</h3><table border='1'><a href="/ebpextensions/structure_ext.html">ebpensions/structure </a><br>
+<tr><td>control structure radius</td><td>22</td></tr><tr><td>ra no build buffer</td><td>1</td></tr><tr><td>control structure is</td><td>true</td></tr><tr><td>control structure use allied</td><td>false</td></tr></table><h3>ResourceExt</h3><table border='1'><a href="/ebpextensions/resource_ext.html">ebpensions/resource </a><br>
+<tr><td>decay to lower limit time</td><td>480</td></tr><tr><td>power per second</td><td>2</td></tr><tr><td>decay red event</td><td>aura/Pulse RED</td></tr><tr><td>decay delay time</td><td>120</td></tr><tr><td>decay amber event</td><td>aura/Pulse AMBER</td></tr><tr><td>decay enabled</td><td>true</td></tr><tr><td>decay green event</td><td>aura/Pulse GREEN</td></tr><tr><td>decay lower limit percentage</td><td>0.75</td></tr></table><h3>AddonExt</h3><table border='1'><a href="/ebpextensions/addon_ext.html">ebpensions/addon </a><br>
+<td colspan='2'><strong>addons</strong>: <table border='1'><a href="/addons/addon_necron_hq_1.html">addons/addon necron hq 1</a><br>
+<a href="/addons/addon_necron_hq_2.html">addons/addon necron hq 2</a><br>
+<a href="/addons/addon_necron_hq_3.html">addons/addon necron hq 3</a><br>
+</table></td></table><h3>HqExt</h3><table border='1'><a href="/ebpextensions/hq_ext.html">ebpensions/hq </a><br>
+</table><h3>SpawnerExt</h3><table border='1'><a href="/ebpextensions/spawner_ext.html">ebpensions/spawner </a><br>
+<td colspan='2'><strong>squad table</strong>: <table border='1'><a href="/sbps/races/necrons/necron_builder_scarab_squad.html">sbps/races/necrons/necron builder scarab squad</a><br>
+<a href="/sbps/races/necrons/necron_basic_warrior_squad.html">sbps/races/necrons/necron basic warrior squad</a><br>
+<a href="/sbps/races/necrons/necron_flayed_one_squad.html">sbps/races/necrons/necron flayed one squad</a><br>
+<a href="/sbps/races/necrons/necron_deceiver_squad.html">sbps/races/necrons/necron deceiver squad</a><br>
+<a href="/sbps/races/necrons/necron_restored_monolith_squad.html">sbps/races/necrons/necron restored monolith squad</a><br>
+<tr><td>squad 11</td><td></td></tr><tr><td>squad 12</td><td></td></tr><tr><td>squad 13</td><td></td></tr></table></td></table><h3>StructureBuildableExt</h3><table border='1'><a href="/ebpextensions/structure_buildable_ext.html">ebpensions/structure buildable </a><br>
+<tr><td>build menu priority</td><td>1</td></tr><tr><td>return requisition percent</td><td>0</td></tr></table><h3>ResearchExt</h3><table border='1'><a href="/ebpextensions/research_ext.html">ebpensions/research </a><br>
+</table>
+                <script>
+                    // Function to fetch HTML content and display it in the tooltip
+                    function showTooltip(e, path) {
+                        var tooltip = document.getElementById('tooltip');
+                        
+                        // Fetch content from the target HTML page
+                        fetch(path)
+                            .then(response => response.text())
+                            .then(data => {
+                                // Set the tooltip content to the fetched HTML (or a part of it)
+                                tooltip.innerHTML = data.substring(0, 500); // Limit the length to prevent overflow
+                                tooltip.style.display = 'block';
+                                tooltip.style.left = e.pageX + 'px';  // Position the tooltip based on the mouse
+                                tooltip.style.top = e.pageY + 10 + 'px';  // Position with some offset
+                            })
+                            .catch(error => {
+                                console.error("Error loading file:", error);
+                            });
+                    }
+
+                    // Function to hide the tooltip when mouse leaves the link
+                    function hideTooltip() {
+                        var tooltip = document.getElementById('tooltip');
+                        tooltip.style.display = 'none';
+                    }
+
+                    // Add event listeners to links
+                    var links = document.querySelectorAll('.hover-link');
+                    links.forEach(link => {
+                        link.addEventListener('mouseover', function(e) {
+                            var path = link.getAttribute('data-path');  // Get the file path from data attribute
+                            showTooltip(e, path);  // Show the tooltip with content
+                        });
+
+                        link.addEventListener('mouseout', hideTooltip);  // Hide the tooltip when mouse leaves
+                    });
+                </script>
+        </body>
+        </html>

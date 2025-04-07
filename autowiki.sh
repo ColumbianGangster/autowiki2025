@@ -26,6 +26,8 @@ if [[ ! -f "$JAR_GSON" ]]; then
     exit 1
 fi
 
+rm -r docs
+rm -r rawjson
 # Run the Kotlin script with the required classpath
 kotlinc -cp "$JAR_LUAJ:$JAR_JSON" -script "$KOTLIN_SCRIPT"
 kotlinc -cp "$JAR_GSON" -script "$KOTLIN_SCRIPT2"

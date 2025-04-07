@@ -57,7 +57,7 @@ fun processDirectory(inputDir: File, outputDir: File) {
             val outputFile = File(outputDir, relativePath)
             outputFile.writeText(cleanedJsonString)
 
-            println("Cleaned: ${file.absolutePath} -> ${outputFile.absolutePath}")
+            // println("Cleaned: ${file.absolutePath} -> ${outputFile.absolutePath}")
         }
     }
 }

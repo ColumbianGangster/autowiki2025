@@ -1,0 +1,178 @@
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 20px;
+                    padding: 10px;
+                    background-color: #f4f4f9;
+                }
+
+                h3 {
+                    color: #4CAF50;
+                    border-bottom: 2px solid #4CAF50;
+                    padding-bottom: 5px;
+                }
+
+                table {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    border-collapse: collapse;
+                    border: 1px solid #ddd;
+                }
+
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+
+                tr:hover {
+                    background-color: #ddd;
+                }
+
+                .section {
+                    margin-bottom: 30px;
+                }
+
+                .section h3 {
+                    margin-top: 20px;
+                }
+
+                /* Basic tooltip styling */
+                .tooltip {
+                    position: absolute;
+                    display: none;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    color: white;
+                    border-radius: 5px;
+                    padding: 10px;
+                    max-width: 300px;
+                    word-wrap: break-word;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    z-index: 1000;
+                }
+
+                /* Top Navigation Bar Styles */
+                nav {
+                    background-color: #333;
+                    padding: 10px 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                nav a {
+                    color: white;
+                    text-decoration: none;
+                    padding: 10px 15px;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    border-radius: 5px;
+                    transition: background-color 0.3s;
+                }
+
+                nav a:hover {
+                    background-color: #575757;
+                }
+
+                .logo {
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: white;
+                }
+
+                /* Right-aligned links (e.g., for other sections or logout) */
+                .nav-links {
+                    display: flex;
+                }
+
+                .nav-links a {
+                    margin-left: 20px;
+                }
+            </style>
+        </head>
+        <body>
+            <!-- Tooltip container -->
+    <div id="tooltip" class="tooltip"></div>
+            <h3>UiExt</h3><table border='1'><a href="/ebpextensions/ui_ext.html">ebpensions/ui </a><br>
+<tr><td>minimap teamcolor</td><td>true</td></tr><tr><td>speech directory</td><td>Speech/Races/Guard/Assassin</td></tr><tr><td>minimap enable</td><td>true</td></tr><tr><td>ui hotkey name</td><td>guard assassin</td></tr><td colspan='7'><strong>ui info</strong>: <table border='1'><td colspan='3'><strong>help text list</strong>: <table border='1'><tr><td>text 01</td><td>$690550 -- - Commander.</td></tr><tr><td>text 02</td><td>$690552 -- - Lone stealth member equipped with a long range sniper rifle.</td></tr><tr><td>text 03</td><td>$690551 -- - Able to use Timed Infiltration.</td></tr><tr><td>text 04</td><td>$15904811 -- - The Vindicare Assassin adds +5 to the FSR total and increases FSR growth rate by 0.7%.</td></tr><tr><td>text 05</td><td>$16510090 --        - RANGED: Long Range effective against Infantry, Heavy Infantry, Daemon, Commander, Monster and Greater Daemon.</td></tr><tr><td>text 06</td><td>$16510089 --        - MELEE: Effective against Infantry, Lightweight and Armored Heavy Infantry and Light and Medium Fortified Building.</td></tr><tr><td>text 07</td><td>$15903899 -- - Detects infiltration units and minefields.</td></tr><tr><td>text 08</td><td>$18010002 -- - COMMANDER DEATH: If dead, for 20 seconds friendly squads across the whole map will have their max morale and morale regen decreased by 34%.</td></tr></table></td><tr><td>screen name id</td><td>$690555 -- Vindicare Assassin</td></tr><tr><td>icon name</td><td>guard icons/guard squad assassin</td></tr></table></td><tr><td>ui index hint</td><td>5</td></tr></table><h3>HealthExt</h3><table border='1'><tr><td>armour minimum</td><td>5</td></tr><tr><td>max repairers</td><td>0</td></tr><tr><td>poison spread delay</td><td>2</td></tr><a href="/ebps/environment/gameplay/blood_splat.html">ebps/environment/gameplay/blood splat</a><br>
+<tr><td>pre death event delay</td><td>3</td></tr><tr><td>regeneration decrease in combat</td><td>2</td></tr><tr><td>regeneration rate</td><td>2</td></tr><tr><td>armour</td><td>100</td></tr><tr><td>morale death</td><td>300</td></tr><a href="/ebpextensions/health_ext.html">ebpensions/health </a><br>
+<tr><td>poison immunity duration</td><td>30</td></tr><tr><td>hitpoints</td><td>315</td></tr><tr><td>poison event</td><td>art\\events\\Chaos\\BiotoxBomb aura Large</td></tr><tr><td>poison damage duration</td><td>15</td></tr><tr><td>poison damage</td><td>0.8</td></tr><a href="/ebps/environment/gameplay/dark_eldar_death_blossom.html">ebps/environment/gameplay/dark eldar death blossom</a><br>
+<tr><td>death event</td><td>data:/art/events/unit death events/sink into ground.events</td></tr></table><h3>TypeExt</h3><table border='1'><a href="/ebpextensions/type_ext.html">ebpensions/type </a><br>
+<td colspan='2'><strong>type armour</strong>: <table border='1'><a href="/type_armour/tp_commander.html">type armour/tp commander</a><br>
+</table></td></table><h3>CostExt</h3><table border='1'><a href="/ebpextensions/cost_ext.html">ebpensions/cost </a><br>
+<td colspan='2'><strong>time cost</strong>: <table border='1'><td colspan='2'><strong>cost</strong>: <table border='1'><tr><td>requisition</td><td>220</td></tr><tr><td>power</td><td>120</td></tr></table></td><tr><td>time seconds</td><td>70</td></tr></table></td></table><h3>MovingExt</h3><table border='1'><a href="/ebpextensions/moving_ext.html">ebpensions/moving </a><br>
+<tr><td>speed max</td><td>21</td></tr></table><h3>SightExt</h3><table border='1'><a href="/ebpextensions/sight_ext.html">ebpensions/sight </a><br>
+<tr><td>keen sight radius</td><td>15</td></tr><tr><td>sight radius</td><td>50</td></tr></table><h3>CombatExt</h3><table border='1'><a href="/ebpextensions/combat_ext.html">ebpensions/combat </a><br>
+<td colspan='2'><strong>hardpoints</strong>: <table border='1'><td colspan='2'><strong>hardpoint 01</strong>: <table border='1'><tr><td>horizontal aim motion variable name</td><td>Aim Horizontal Main</td></tr><tr><td>vertical aim motion variable name</td><td>Aim Vertical Main</td></tr><td colspan='6'><strong>weapon table</strong>: <table border='1'><td colspan='1'><strong>weapon 01</strong>: <table border='1'><a href="/weapon/guard_exitus_rifle.html">weapon/guard exitus rifle</a><br>
+<tr><td>name</td><td>Guard Exitus rifle</td></tr><td colspan='4'><strong>origin</strong>: <table border='1'><tr><td>y</td><td>1.16</td></tr></table></td><td colspan='4'><strong>muzzle</strong>: <table border='1'><tr><td>y</td><td>1.16</td></tr><tr><td>z</td><td>1.91</td></tr></table></td></table></td></table></td><tr><td>attack motion variable name</td><td>Weapon Range Tracking Main</td></tr><tr><td>shoot motion variable name</td><td>Weapon Range Firing Main</td></tr><tr><td>hardpoint weapon variant motion name</td><td>Weapon Range Upgrade Main</td></tr></table></td><td colspan='2'><strong>hardpoint 02</strong>: <table border='1'><tr><td>horizontal aim motion variable name</td><td></td></tr><tr><td>vertical aim motion variable name</td><td></td></tr><td colspan='6'><strong>weapon table</strong>: <table border='1'><td colspan='1'><strong>weapon 01</strong>: <table border='1'><a href="/weapon/guard_exitus_pistol_assassin.html">weapon/guard exitus pistol assassin</a><br>
+<tr><td>name</td><td>guard exitus pistol</td></tr></table></td></table></td><tr><td>attack motion variable name</td><td></td></tr><tr><td>shoot motion variable name</td><td></td></tr><tr><td>hardpoint weapon variant motion name</td><td>Weapon Melee Upgrade Main</td></tr></table></td></table></td></table><h3>DeathExplosionExt</h3><table border='1'><a href="/ebpextensions/death_explosion_ext.html">ebpensions/death explosion </a><br>
+<tr><td>chance</td><td>100</td></tr><td colspan='3'><strong>death explosions</strong>: <table border='1'><td colspan='2'><strong>death explosion 01</strong>: <table border='1'><tr><td>chance</td><td>100</td></tr><td colspan='2'><strong>area effect</strong>: <table border='1'><td colspan='2'><strong>area effect information</strong>: <table border='1'><td colspan='4'><strong>filter type</strong>: <table border='1'><a href="/type_areafilter/tp_area_filter_own.html">type areafilter/tp area filter own</a><br>
+</table></td><td colspan='4'><strong>area type</strong>: <table border='1'><a href="/type_areaeffect/tp_area_effect_circle.html">type areaeffect/tp area effect circle</a><br>
+</table></td><tr><td>radius</td><td>300</td></tr><tr><td>remove modifiers with source entity</td><td>false</td></tr></table></td></table></td></table></td><td colspan='2'><strong>death explosion 03</strong>: <table border='1'><tr><td>chance</td><td>100</td></tr><td colspan='2'><strong>area effect</strong>: <table border='1'><td colspan='2'><strong>area effect information</strong>: <table border='1'><td colspan='4'><strong>filter type</strong>: <table border='1'><a href="/type_areafilter/tp_area_filter_own.html">type areafilter/tp area filter own</a><br>
+</table></td><td colspan='4'><strong>area type</strong>: <table border='1'><a href="/type_areaeffect/tp_area_effect_circle.html">type areaeffect/tp area effect circle</a><br>
+</table></td><tr><td>radius</td><td>300</td></tr><tr><td>remove modifiers with source entity</td><td>false</td></tr></table></td></table></td></table></td></table></td></table><h3>MeleeExt</h3><table border='1'><a href="/ebpextensions/melee_ext.html">ebpensions/melee </a><br>
+<tr><td>charge range</td><td>15</td></tr></table><h3>AbilityExt</h3><table border='1'><a href="/ebpextensions/ability_ext.html">ebpensions/ability </a><br>
+<td colspan='2'><strong>abilities</strong>: <table border='1'><a href="/abilities/guard_assassin_assassinate.html">abilities/guard assassin assassinate</a><br>
+<a href="/abilities/ability_infiltrate.html">abilities/ability infiltrate</a><br>
+</table></td></table><h3>SpecialAttackPhysicsExt</h3><table border='1'><a href="/ebpextensions/special_attack_physics_ext.html">ebpensions/special attack physics </a><br>
+<tr><td>get up time</td><td>2.48</td></tr><tr><td>mass</td><td>18</td></tr><tr><td>disable special attack</td><td>true</td></tr></table><h3>EntityBlueprintExt</h3><table border='1'><a href="/ebpextensions/entity_blueprint_ext.html">ebpensions/entity blueprint </a><br>
+<tr><td>scale z</td><td>0.5</td></tr><tr><td>scale x</td><td>0.5</td></tr><tr><td>minimum update radius</td><td>1</td></tr><tr><td>animator</td><td>Races/Inquisition/Troops/Inquisition Vindicare Assassin Codex</td></tr></table><h3>SimEntityExt</h3><table border='1'><a href="/ebpextensions/sim_entity_ext.html">ebpensions/sim entity </a><br>
+</table><h3>ModifierExt</h3><table border='1'><a href="/ebpextensions/modifier_ext.html">ebpensions/modifier </a><br>
+</table><h3>SynckillExt</h3><table border='1'><a href="/ebpextensions/synckill_ext.html">ebpensions/synckill </a><br>
+</table><h3>CoverExt</h3><table border='1'><a href="/ebpextensions/cover_ext.html">ebpensions/cover </a><br>
+<td colspan='4'><strong>cover heavy</strong>: <table border='1'><td colspan='1'><strong>modifiers</strong>: <table border='1'><td colspan='2'><strong>modifier 02</strong>: <table border='1'><tr><td>value</td><td>1</td></tr></table></td><td colspan='2'><strong>modifier 03</strong>: <table border='1'><a href="/modifiers/cover_event_modifier.html">modifiers/cover event modifier</a><br>
+</table></td></table></td></table></td><td colspan='4'><strong>cover light</strong>: <table border='1'><td colspan='1'><strong>modifiers</strong>: <table border='1'><td colspan='2'><strong>modifier 02</strong>: <table border='1'><tr><td>value</td><td>1</td></tr></table></td><td colspan='2'><strong>modifier 03</strong>: <table border='1'><a href="/modifiers/cover_event_modifier.html">modifiers/cover event modifier</a><br>
+</table></td></table></td></table></td><td colspan='4'><strong>cover negative</strong>: <table border='1'><td colspan='1'><strong>modifiers</strong>: <table border='1'><td colspan='2'><strong>modifier 02</strong>: <table border='1'><tr><td>value</td><td>1</td></tr></table></td><td colspan='2'><strong>modifier 03</strong>: <table border='1'><a href="/modifiers/negative_cover_event_modifier.html">modifiers/negative cover event modifier</a><br>
+</table></td></table></td></table></td></table><h3>InfiltrationExt</h3><table border='1'><a href="/ebpextensions/infiltration_ext.html">ebpensions/infiltration </a><br>
+</table><h3>ModifierApplyExt</h3><table border='1'><a href="/ebpextensions/modifier_apply_ext.html">ebpensions/modifier apply </a><br>
+<td colspan='2'><strong>modifiers</strong>: <table border='1'><td colspan='1'><strong>modifier 10</strong>: <table border='1'><a href="/modifiers/population_growth_rate_player_modifier.html">modifiers/population growth rate player modifier</a><br>
+<tr><td>value</td><td>0.01</td></tr></table></td></table></td></table><h3>SyncdeathExt</h3><table border='1'><a href="/ebpextensions/syncdeath_ext.html">ebpensions/syncdeath </a><br>
+</table>
+                <script>
+                    // Function to fetch HTML content and display it in the tooltip
+                    function showTooltip(e, path) {
+                        var tooltip = document.getElementById('tooltip');
+                        
+                        // Fetch content from the target HTML page
+                        fetch(path)
+                            .then(response => response.text())
+                            .then(data => {
+                                // Set the tooltip content to the fetched HTML (or a part of it)
+                                tooltip.innerHTML = data.substring(0, 500); // Limit the length to prevent overflow
+                                tooltip.style.display = 'block';
+                                tooltip.style.left = e.pageX + 'px';  // Position the tooltip based on the mouse
+                                tooltip.style.top = e.pageY + 10 + 'px';  // Position with some offset
+                            })
+                            .catch(error => {
+                                console.error("Error loading file:", error);
+                            });
+                    }
+
+                    // Function to hide the tooltip when mouse leaves the link
+                    function hideTooltip() {
+                        var tooltip = document.getElementById('tooltip');
+                        tooltip.style.display = 'none';
+                    }
+
+                    // Add event listeners to links
+                    var links = document.querySelectorAll('.hover-link');
+                    links.forEach(link => {
+                        link.addEventListener('mouseover', function(e) {
+                            var path = link.getAttribute('data-path');  // Get the file path from data attribute
+                            showTooltip(e, path);  // Show the tooltip with content
+                        });
+
+                        link.addEventListener('mouseout', hideTooltip);  // Hide the tooltip when mouse leaves
+                    });
+                </script>
+        </body>
+        </html>

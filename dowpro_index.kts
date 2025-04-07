@@ -1,4 +1,6 @@
 import java.io.File
+import java.math.BigDecimal
+import java.math.RoundingMode
 
 fun main() {
     val inputDir = File("docs")   // Change this
@@ -138,6 +140,45 @@ fun main() {
     println("Index file generated at: ${indexFile.absolutePath}")
 }
 
+fun cleanString(input: String): String {
+
+    val stringsToRemove = listOf(
+        "_" to " ",
+        ".html" to "",
+        "chaos" to "",
+        "dark eldar" to "",
+        "eldar" to "",
+        "guard " to "",
+        "necron" to "",
+        "ork" to "",
+        "sisters" to "",
+        "space marine" to "",
+        "steel legion" to "",
+        "tau" to "",
+    )
+
+    var cleanedString = input
+    for ((oldValue, newValue) in stringsToRemove) {
+        cleanedString = cleanedString.replace(oldValue, newValue)
+    }
+
+    // Handle number strings that can be converted to actual numbers
+    val number = cleanedString.toDoubleOrNull()
+    if (number != null) {
+        // Check if it's a whole number, and remove decimal places if it's effectively an integer
+        val roundedNumber = BigDecimal(number.toString()).setScale(2, RoundingMode.HALF_UP).toDouble()
+        return if (roundedNumber == roundedNumber.toInt().toDouble()) {
+            // Return the rounded number as an integer
+            roundedNumber.toInt().toString()
+        } else {
+            // Return the number as a string with 2 decimal places
+            roundedNumber.toString()
+        }
+    }
+
+    return cleanedString
+}
+
 // Recursively generate links
 fun generateLinks(baseDir: File, currentDir: File, builder: StringBuilder) {
     val ignoreList = listOf(
@@ -157,7 +198,7 @@ fun generateLinks(baseDir: File, currentDir: File, builder: StringBuilder) {
             generateLinks(baseDir, file, builder)
             builder.appendLine("</ul></li>")
         } else {
-            builder.appendLine("<li>📄 <a href=\"$relativePath\" class=\"file-link\">${file.name}</a></li>")
+            builder.appendLine("<li>📄 <a href=\"$relativePath\" class=\"file-link\">${cleanString(file.name)}</a></li>")
         }
     }
 }
