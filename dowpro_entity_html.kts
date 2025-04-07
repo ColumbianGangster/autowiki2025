@@ -46,9 +46,70 @@ data class Root (
       @SerializedName("research_ext"            ) var researchExt           : ResearchExt?,
       @SerializedName("garrison_ext"            ) var garrisonExt           : GarrisonExt?, // eldar lp
       @SerializedName("relocatee_ext"           ) var relocateeExt          : RelocateeExt?, // eldar power gen
+      // abilities
+      @SerializedName("caster_damage"                     ) var casterDamage                  : CasterDamage?,
+      @SerializedName("center_target_on_owner"            ) var centerTargetOnOwner           : String?               = null,
+      @SerializedName("target_self"                       ) var targetSelf                    : String?               = null,
+      @SerializedName("looping_event_name"                ) var loopingEventName              : String?               = null,
+      @SerializedName("darklance_delay"                   ) var darklanceDelay                : String?               = null,
+      @SerializedName("child_range"                       ) var childRange                    : String?               = null,
+      @SerializedName("refresh_time"                      ) var refreshTime                   : String?               = null,
+      @SerializedName("ability_cursor_event"              ) var abilityCursorEvent            : String?               = null,
+      @SerializedName("anticipation_event_name"           ) var anticipationEventName         : String?               = null,
+      @SerializedName("direction_arc_left"                ) var directionArcLeft              : String?               = null,
+      @SerializedName("backfire_action_name"              ) var backfireActionName            : String?               = null,
+      @SerializedName("ability_ordered_event_mp"          ) var abilityOrderedEventMp         : String?               = null,
+      @SerializedName("projectile_spawn_pos"              ) var projectileSpawnPos            : ProjectileSpawnPos?,
+      @SerializedName("direction_arc_right"               ) var directionArcRight             : String?               = null,
+      @SerializedName("anticipation_lead_time"            ) var anticipationLeadTime          : String?               = null,
+      @SerializedName("ui_hotkey_name"                    ) var uiHotkeyName                  : String?               = null,
+      @SerializedName("projectile_name"                   ) var projectileName                : String?               = null,
+      @SerializedName("entity_busy_time"                  ) var entityBusyTime                : String?               = null,
+      @SerializedName("ui_info"                           ) var uiInfo                        : UiInfo?,
+      @SerializedName("initial_delay_time"                ) var initialDelayTime              : String?               = null,
+      @SerializedName("recharge_time"                     ) var rechargeTime                  : String?               = null,
+      @SerializedName("stop"                              ) var stop                          : String?               = null,
+      @SerializedName("backfire_caster_damage"            ) var backfireCasterDamage          : BackfireCasterDamage?,
+      @SerializedName("projectile_recurring_delay"        ) var projectileRecurringDelay      : String?               = null,
+      @SerializedName("child_activation_percent"          ) var childActivationPercent        : String?               = null,
+      @SerializedName("activation"                        ) var activation                    : Activation?,
+      @SerializedName("target_ground"                     ) var targetGround                  : String?               = null,
+      @SerializedName("ability_visible_in_mp"             ) var abilityVisibleInMp            : AbilityVisibleInMp?,
+      @SerializedName("area_effect"                       ) var areaEffect                    : AreaEffect?,
+      @SerializedName("backfire_percent"                  ) var backfirePercent               : String?               = null,
+      @SerializedName("child_ability_name"                ) var childAbilityName              : String?               = null,
+      @SerializedName("weapon_change"                     ) var weaponChange                  : String?               = null,
+      @SerializedName("range"                             ) var range                         : String?               = null,
+      @SerializedName("ability_ordered_event_name"        ) var abilityOrderedEventName       : String?               = null,
+      @SerializedName("spawned_entity_name"               ) var spawnedEntityName             : String?               = null,
+      @SerializedName("backfire_area_effect"              ) var backfireAreaEffect            : BackfireAreaEffect?,
+      @SerializedName("projectile_recurring"              ) var projectileRecurring           : String?               = null,
+      @SerializedName("enemy_opacity_while_active"        ) var enemyOpacityWhileActive       : String?               = null,
+      @SerializedName("target_leader_in_squad"            ) var targetLeaderInSquad           : String?               = null,
+      @SerializedName("ability_motion_name"               ) var abilityMotionName             : String?               = null,
+      @SerializedName("fire_cost"                         ) var fireCost                      : FireCost?,
+      @SerializedName("random_offset"                     ) var randomOffset                  : String?               = null,
+      @SerializedName("direction"                         ) var direction                     : String?               = null,
+      @SerializedName("projectile_spawn_on_ground"        ) var projectileSpawnOnGround       : String?               = null,
+      @SerializedName("friendly_opacity_while_active"     ) var friendlyOpacityWhileActive    : String?               = null,
+      @SerializedName("divine_retribution_event"          ) var divineRetributionEvent        : String?               = null,
+      @SerializedName("requirements"                      ) var requirements                  : Requirements?,
+      @SerializedName("speech_directory"                  ) var speechDirectory               : String?               = null,
+      @SerializedName("recharge_timer_id"                 ) var rechargeTimerId               : String?               = null,
+      @SerializedName("ui_invalid_target_msg"             ) var uiInvalidTargetMsg            : String?               = null,
+      @SerializedName("execute_table"                     ) var executeTable                  : ExecuteTable?,
+      @SerializedName("ability_ordered_event_mp_building" ) var abilityOrderedEventMpBuilding : String?               = null,
+      @SerializedName("persist_across_squad_leader_death" ) var persistAcrossSquadLeaderDeath : String?               = null,
+      @SerializedName("backfire_delay"                    ) var backfireDelay                 : String?               = null,
+      @SerializedName("child_jump_event"                  ) var childJumpEvent                : String?               = null,
+      @SerializedName("duration_time"                     ) var durationTime                  : String?               = null,
+      @SerializedName("recharge_timer_global"             ) var rechargeTimerGlobal           : String?               = null,
+      @SerializedName("ui_instructional_msg"              ) var uiInstructionalMsg            : String?               = null,
+      @SerializedName("target_self_shazam"                ) var targetSelfShazam              : String?               = null,
+      @SerializedName("ui_index_hint"                     ) var uiIndexHint                   : String?               = null,
 )
 
-
+// entities
 
 data class MobExt (
   @SerializedName("reference" ) var reference : String? = null,
@@ -219,6 +280,7 @@ data class Required (
 )
 
 data class Requirements (
+  @SerializedName("reference" ) var reference : String? = null,
   @SerializedName("required_1" ) var required1 : Required?,
   @SerializedName("required_2" ) var required2 : Required?,
   @SerializedName("required_3" ) var required3 : Required?,
@@ -308,6 +370,7 @@ data class HelpTextList (
 )
 
 data class UiInfo (
+  @SerializedName("reference" ) var reference : String? = null,
   @SerializedName("help_text_list" ) var helpTextList : HelpTextList?,
   @SerializedName("screen_name_id" ) var screenNameId : String?       = null,
   @SerializedName("icon_name"      ) var iconName     : String?       = null,
@@ -364,13 +427,23 @@ data class AreaEffectInformation (
   @SerializedName("radius"      ) var radius     : String?     = null,
   @SerializedName("angle_left"  ) var angleLeft  : String?     = null,
   @SerializedName("remove_modifiers_with_source_entity" ) var removeModifiersWithSourceEntity : String?       = null, // necron lord
+)
 
+data class SweepType (
+  @SerializedName("reference" ) var reference : String? = null,
+)
+
+data class SweepingInformation (
+  @SerializedName("sweep_duration" ) var sweepDuration : String?    = null,
+  @SerializedName("sweep_type"     ) var sweepType     : SweepType?,
 )
 
 data class AreaEffect (
+  @SerializedName("reference" ) var reference : String? = null,  
   @SerializedName("area_effect_information" ) var areaEffectInformation : AreaEffectInformation?,
   @SerializedName("weapon_damage"           ) var weaponDamage          : WeaponDamage?,
   @SerializedName("throw_data"              ) var throwData             : ThrowData?,
+  @SerializedName("sweeping_information"    ) var sweepingInformation   : SweepingInformation?,
 )
 
 data class SpecialAttack (
@@ -748,6 +821,44 @@ data class HealthExt (
       @SerializedName("post_death_event_delay" ) var postDeathEventDelay : String? = null, // eldar lp
 )
 
+// abilities
+
+data class CasterDamage (
+  @SerializedName("reference" ) var reference : String? = null,
+)
+
+data class ProjectileSpawnPos (
+  @SerializedName("reference" ) var reference : String? = null,
+  @SerializedName("y"         ) var y         : String? = null,
+  @SerializedName("z"         ) var z         : String? = null,
+)
+
+data class BackfireCasterDamage (
+  @SerializedName("reference" ) var reference : String? = null,
+)
+
+data class Activation (
+  @SerializedName("reference" ) var reference : String? = null,
+)
+
+data class AbilityVisibleInMp (
+  @SerializedName("reference" ) var reference : String? = null,
+)
+
+data class BackfireAreaEffect (
+  @SerializedName("reference" ) var reference : String? = null,
+)
+
+data class ExecuteTable (
+  @SerializedName("reference" ) var reference : String? = null,
+)
+
+data class FireCost (
+  @SerializedName("reference" ) var reference : String? = null,  
+  @SerializedName("requisition" ) var requisition : String? = null,
+  @SerializedName("power"       ) var power       : String? = null,
+)
+
 val gson = GsonBuilder().setLenient().create()
 
 fun generateHtmlLink(path: String): String {
@@ -912,6 +1023,7 @@ fun generateHtml(root: Any?): String {
         htmlContent.append(generateSection("ResearchExt", root.researchExt))
         htmlContent.append(generateSection("GarrisonExt", root.garrisonExt))
         htmlContent.append(generateSection("RelocateeExt", root.relocateeExt))
+        generateAbilitySection(root, htmlContent)
     } else {
         // For simple objects, generate a table
         if (map.isNotEmpty()) {
@@ -921,6 +1033,81 @@ fun generateHtml(root: Any?): String {
 
     // Include other nested sections as necessary
     return htmlContent.toString()
+}
+
+    fun StringBuilder.appendIfNotNullOrEmpty(label: String, value: Any?) {
+        if (value != null && value.toString().isNotEmpty()) {
+            append("<tr><td>$label</td><td>$value</td></tr>")
+        }
+    }
+
+fun generateAbilitySection(ability: Root?, htmlContent: StringBuilder) {
+    // Append each property from the ability object to the HTML content    
+    htmlContent.append(generateSection("UI Info", ability?.uiInfo))
+    htmlContent.append(generateSection("Requirements", ability?.requirements))
+    htmlContent.append(generateSection("Fire Cost", ability?.fireCost))
+    htmlContent.append("<table><tr><th>Property</th><th>Value</th></tr>")
+    with(htmlContent) {
+        appendIfNotNullOrEmpty("Refresh Time", ability?.refreshTime)
+        appendIfNotNullOrEmpty("Recharge Time", ability?.rechargeTime)
+        appendIfNotNullOrEmpty("Range", ability?.range)
+        appendIfNotNullOrEmpty("Duration Time", ability?.durationTime)
+        appendIfNotNullOrEmpty("Recharge Timer Global", ability?.rechargeTimerGlobal)
+        appendIfNotNullOrEmpty("Child Ability Name", ability?.childAbilityName)
+        appendIfNotNullOrEmpty("Area Effect", ability?.areaEffect?.reference)
+        appendIfNotNullOrEmpty("Caster Damage", ability?.casterDamage?.reference)
+        appendIfNotNullOrEmpty("Center Target On Owner", ability?.centerTargetOnOwner)
+        appendIfNotNullOrEmpty("Target Self", ability?.targetSelf)
+        appendIfNotNullOrEmpty("Looping Event Name", ability?.loopingEventName)
+        appendIfNotNullOrEmpty("Darklance Delay", ability?.darklanceDelay)
+        appendIfNotNullOrEmpty("Child Range", ability?.childRange)
+        appendIfNotNullOrEmpty("Ability Cursor Event", ability?.abilityCursorEvent)
+        appendIfNotNullOrEmpty("Anticipation Event Name", ability?.anticipationEventName)
+        appendIfNotNullOrEmpty("Direction Arc Left", ability?.directionArcLeft)
+        appendIfNotNullOrEmpty("Backfire Action Name", ability?.backfireActionName)
+        appendIfNotNullOrEmpty("Ability Ordered Event MP", ability?.abilityOrderedEventMp)
+        appendIfNotNullOrEmpty("Projectile Spawn Pos", ability?.projectileSpawnPos?.reference)
+        appendIfNotNullOrEmpty("Direction Arc Right", ability?.directionArcRight)
+        appendIfNotNullOrEmpty("Anticipation Lead Time", ability?.anticipationLeadTime)
+        appendIfNotNullOrEmpty("UI Hotkey Name", ability?.uiHotkeyName)
+        appendIfNotNullOrEmpty("Projectile Name", ability?.projectileName)
+        appendIfNotNullOrEmpty("Entity Busy Time", ability?.entityBusyTime)
+        appendIfNotNullOrEmpty("Initial Delay Time", ability?.initialDelayTime)
+        appendIfNotNullOrEmpty("Stop", ability?.stop)
+        appendIfNotNullOrEmpty("Backfire Caster Damage", ability?.backfireCasterDamage?.reference)
+        appendIfNotNullOrEmpty("Projectile Recurring Delay", ability?.projectileRecurringDelay)
+        appendIfNotNullOrEmpty("Child Activation Percent", ability?.childActivationPercent)
+        appendIfNotNullOrEmpty("Activation", ability?.activation?.reference)
+        appendIfNotNullOrEmpty("Target Ground", ability?.targetGround)
+        appendIfNotNullOrEmpty("Ability Visible In MP", ability?.abilityVisibleInMp?.reference)
+        appendIfNotNullOrEmpty("Backfire Percent", ability?.backfirePercent)
+        appendIfNotNullOrEmpty("Weapon Change", ability?.weaponChange)
+        appendIfNotNullOrEmpty("Ability Ordered Event Name", ability?.abilityOrderedEventName)
+        appendIfNotNullOrEmpty("Spawned Entity Name", ability?.spawnedEntityName)
+        appendIfNotNullOrEmpty("Backfire Area Effect", ability?.backfireAreaEffect?.reference)
+        appendIfNotNullOrEmpty("Projectile Recurring", ability?.projectileRecurring)
+        appendIfNotNullOrEmpty("Enemy Opacity While Active", ability?.enemyOpacityWhileActive)
+        appendIfNotNullOrEmpty("Target Leader In Squad", ability?.targetLeaderInSquad)
+        appendIfNotNullOrEmpty("Ability Motion Name", ability?.abilityMotionName)
+        appendIfNotNullOrEmpty("Random Offset", ability?.randomOffset)
+        appendIfNotNullOrEmpty("Direction", ability?.direction)
+        appendIfNotNullOrEmpty("Projectile Spawn On Ground", ability?.projectileSpawnOnGround)
+        appendIfNotNullOrEmpty("Friendly Opacity While Active", ability?.friendlyOpacityWhileActive)
+        appendIfNotNullOrEmpty("Divine Retribution Event", ability?.divineRetributionEvent)
+        appendIfNotNullOrEmpty("Speech Directory", ability?.speechDirectory)
+        appendIfNotNullOrEmpty("Recharge Timer ID", ability?.rechargeTimerId)
+        appendIfNotNullOrEmpty("UI Invalid Target Msg", ability?.uiInvalidTargetMsg)
+        appendIfNotNullOrEmpty("Execute Table", ability?.executeTable?.reference)
+        appendIfNotNullOrEmpty("Ability Ordered Event MP Building", ability?.abilityOrderedEventMpBuilding)
+        appendIfNotNullOrEmpty("Persist Across Squad Leader Death", ability?.persistAcrossSquadLeaderDeath)
+        appendIfNotNullOrEmpty("Backfire Delay", ability?.backfireDelay)
+        appendIfNotNullOrEmpty("Child Jump Event", ability?.childJumpEvent)
+        appendIfNotNullOrEmpty("UI Instructional Msg", ability?.uiInstructionalMsg)
+        appendIfNotNullOrEmpty("Target Self Shazam", ability?.targetSelfShazam)
+        appendIfNotNullOrEmpty("UI Index Hint", ability?.uiIndexHint)   
+    }
+ 
+    htmlContent.append("</table>")
 }
 
 // Helper function to generate HTML for a nested object

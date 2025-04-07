@@ -1,144 +1,150 @@
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 20px;
-                padding: 10px;
-                background-color: #f4f4f9;
-            }
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 20px;
+                    padding: 10px;
+                    background-color: #f4f4f9;
+                }
 
-            h3 {
-                color: #4CAF50;
-                border-bottom: 2px solid #4CAF50;
-                padding-bottom: 5px;
-            }
+                h3 {
+                    color: #4CAF50;
+                    border-bottom: 2px solid #4CAF50;
+                    padding-bottom: 5px;
+                }
 
-            table {
-                width: 100%;
-                margin-bottom: 20px;
-                border-collapse: collapse;
-                border: 1px solid #ddd;
-            }
+                table {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    border-collapse: collapse;
+                    border: 1px solid #ddd;
+                }
 
-            th, td {
-                padding: 8px;
-                text-align: left;
-                border-bottom: 1px solid #ddd;
-            }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
 
-            tr:nth-child(even) {
-                background-color: #f2f2f2;
-            }
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
 
-            tr:hover {
-                background-color: #ddd;
-            }
+                tr:hover {
+                    background-color: #ddd;
+                }
 
-            .section {
-                margin-bottom: 30px;
-            }
+                .section {
+                    margin-bottom: 30px;
+                }
 
-            .section h3 {
-                margin-top: 20px;
-            }
+                .section h3 {
+                    margin-top: 20px;
+                }
 
-            /* Basic tooltip styling */
-            .tooltip {
-                position: absolute;
-                display: none;
-                background-color: rgba(0, 0, 0, 0.7);
-                color: white;
-                border-radius: 5px;
-                padding: 10px;
-                max-width: 300px;
-                word-wrap: break-word;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                z-index: 1000;
-            }
+                /* Basic tooltip styling */
+                .tooltip {
+                    position: absolute;
+                    display: none;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    color: white;
+                    border-radius: 5px;
+                    padding: 10px;
+                    max-width: 300px;
+                    word-wrap: break-word;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    z-index: 1000;
+                }
 
-            /* Top Navigation Bar Styles */
-            nav {
-                background-color: #333;
-                padding: 10px 20px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
+                /* Top Navigation Bar Styles */
+                nav {
+                    background-color: #333;
+                    padding: 10px 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
 
-            nav a {
-                color: white;
-                text-decoration: none;
-                padding: 10px 15px;
-                font-size: 16px;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                border-radius: 5px;
-                transition: background-color 0.3s;
-            }
+                nav a {
+                    color: white;
+                    text-decoration: none;
+                    padding: 10px 15px;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    border-radius: 5px;
+                    transition: background-color 0.3s;
+                }
 
-            nav a:hover {
-                background-color: #575757;
-            }
+                nav a:hover {
+                    background-color: #575757;
+                }
 
-            .logo {
-                font-size: 20px;
-                font-weight: bold;
-                color: white;
-            }
+                .logo {
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: white;
+                }
 
-            /* Right-aligned links (e.g., for other sections or logout) */
-            .nav-links {
-                display: flex;
-            }
+                /* Right-aligned links (e.g., for other sections or logout) */
+                .nav-links {
+                    display: flex;
+                }
 
-            .nav-links a {
-                margin-left: 20px;
-            }
-        </style>
-    </head>
-    <body>
-        <!-- Tooltip container -->
-<div id="tooltip" class="tooltip"></div>
-        
-            <script>
-                // Function to fetch HTML content and display it in the tooltip
-                function showTooltip(e, path) {
-                    var tooltip = document.getElementById('tooltip');
-                    
-                    // Fetch content from the target HTML page
-                    fetch(path)
-                        .then(response => response.text())
-                        .then(data => {
-                            // Set the tooltip content to the fetched HTML (or a part of it)
-                            tooltip.innerHTML = data.substring(0, 500); // Limit the length to prevent overflow
-                            tooltip.style.display = 'block';
-                            tooltip.style.left = e.pageX + 'px';  // Position the tooltip based on the mouse
-                            tooltip.style.top = e.pageY + 10 + 'px';  // Position with some offset
-                        })
-                        .catch(error => {
-                            console.error("Error loading file:", error);
+                .nav-links a {
+                    margin-left: 20px;
+                }
+            </style>
+        </head>
+        <body>
+            <!-- Tooltip container -->
+    <div id="tooltip" class="tooltip"></div>
+            <h3>UI Info</h3><table border='1'><a href="/autowiki2025/tables/ui_info_table.html">tables/ui info table</a><br>
+<td colspan='4'><strong>help text list</strong>: <table border='1'><tr><td>text 01</td><td>$18010457 -- - Increases the ranged damage of Shootas by 30%, Sluggas, Stormboyz and Tankbustas by 20%, Nobz by 15%, Shoota's Big Shoota and Flash Git Kustom Shoota by 20%.</td></tr><tr><td>text 02</td><td>$15905017 -- - Increases the ranged accuracy on the move of Shoota Boy and 'ard Boy Big Shootas by 10%.</td></tr><tr><td>text 03</td><td>$15904083 -- - Increases the number of heavy weapons Shootas and 'ard Boyz squads may carry by 1.</td></tr><tr><td>text 04</td><td>$95853 -- - Second of two possible upgrades.</td></tr><tr><td>text 05</td><td>$15904821 -- - Completion time: 30 seconds.</td></tr></table></td><tr><td>screen name id</td><td>$95850 -- Even More Dakka Research</td></tr><tr><td>icon name</td><td>ork icons/research evenmoredakka icon</td></tr></table><h3>Requirements</h3><table border='1'><a href="/autowiki2025/tables/requirements.html">tables/requirements</a><br>
+<td colspan='4'><strong>required 1</strong>: <table border='1'><a href="/autowiki2025/requirements/global_required_addon.html">requirements/global required addon</a><br>
+<a href="/autowiki2025/addons/ork_hq_addon.html">addons/ork hq addon</a><br>
+</table></td><td colspan='4'><strong>required 2</strong>: <table border='1'><a href="/autowiki2025/requirements/required_total_pop.html">requirements/required total pop</a><br>
+</table></td><td colspan='4'><strong>required 3</strong>: <table border='1'><a href="/autowiki2025/requirements/required_research.html">requirements/required research</a><br>
+</table></td></table><table><tr><th>Property</th><th>Value</th></tr><tr><td>UI Hotkey Name</td><td>[[ork_moredakka_research_1]]</td></tr><tr><td>UI Index Hint</td><td>5</td></tr></table>
+                <script>
+                    // Function to fetch HTML content and display it in the tooltip
+                    function showTooltip(e, path) {
+                        var tooltip = document.getElementById('tooltip');
+                        
+                        // Fetch content from the target HTML page
+                        fetch(path)
+                            .then(response => response.text())
+                            .then(data => {
+                                // Set the tooltip content to the fetched HTML (or a part of it)
+                                tooltip.innerHTML = data.substring(0, 500); // Limit the length to prevent overflow
+                                tooltip.style.display = 'block';
+                                tooltip.style.left = e.pageX + 'px';  // Position the tooltip based on the mouse
+                                tooltip.style.top = e.pageY + 10 + 'px';  // Position with some offset
+                            })
+                            .catch(error => {
+                                console.error("Error loading file:", error);
+                            });
+                    }
+
+                    // Function to hide the tooltip when mouse leaves the link
+                    function hideTooltip() {
+                        var tooltip = document.getElementById('tooltip');
+                        tooltip.style.display = 'none';
+                    }
+
+                    // Add event listeners to links
+                    var links = document.querySelectorAll('.hover-link');
+                    links.forEach(link => {
+                        link.addEventListener('mouseover', function(e) {
+                            var path = link.getAttribute('data-path');  // Get the file path from data attribute
+                            showTooltip(e, path);  // Show the tooltip with content
                         });
-                }
 
-                // Function to hide the tooltip when mouse leaves the link
-                function hideTooltip() {
-                    var tooltip = document.getElementById('tooltip');
-                    tooltip.style.display = 'none';
-                }
-
-                // Add event listeners to links
-                var links = document.querySelectorAll('.hover-link');
-                links.forEach(link => {
-                    link.addEventListener('mouseover', function(e) {
-                        var path = link.getAttribute('data-path');  // Get the file path from data attribute
-                        showTooltip(e, path);  // Show the tooltip with content
+                        link.addEventListener('mouseout', hideTooltip);  // Hide the tooltip when mouse leaves
                     });
-
-                    link.addEventListener('mouseout', hideTooltip);  // Hide the tooltip when mouse leaves
-                });
-            </script>
-    </body>
-    </html>
+                </script>
+        </body>
+        </html>

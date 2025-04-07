@@ -1,144 +1,146 @@
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 20px;
-                padding: 10px;
-                background-color: #f4f4f9;
-            }
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 20px;
+                    padding: 10px;
+                    background-color: #f4f4f9;
+                }
 
-            h3 {
-                color: #4CAF50;
-                border-bottom: 2px solid #4CAF50;
-                padding-bottom: 5px;
-            }
+                h3 {
+                    color: #4CAF50;
+                    border-bottom: 2px solid #4CAF50;
+                    padding-bottom: 5px;
+                }
 
-            table {
-                width: 100%;
-                margin-bottom: 20px;
-                border-collapse: collapse;
-                border: 1px solid #ddd;
-            }
+                table {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    border-collapse: collapse;
+                    border: 1px solid #ddd;
+                }
 
-            th, td {
-                padding: 8px;
-                text-align: left;
-                border-bottom: 1px solid #ddd;
-            }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
 
-            tr:nth-child(even) {
-                background-color: #f2f2f2;
-            }
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
 
-            tr:hover {
-                background-color: #ddd;
-            }
+                tr:hover {
+                    background-color: #ddd;
+                }
 
-            .section {
-                margin-bottom: 30px;
-            }
+                .section {
+                    margin-bottom: 30px;
+                }
 
-            .section h3 {
-                margin-top: 20px;
-            }
+                .section h3 {
+                    margin-top: 20px;
+                }
 
-            /* Basic tooltip styling */
-            .tooltip {
-                position: absolute;
-                display: none;
-                background-color: rgba(0, 0, 0, 0.7);
-                color: white;
-                border-radius: 5px;
-                padding: 10px;
-                max-width: 300px;
-                word-wrap: break-word;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                z-index: 1000;
-            }
+                /* Basic tooltip styling */
+                .tooltip {
+                    position: absolute;
+                    display: none;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    color: white;
+                    border-radius: 5px;
+                    padding: 10px;
+                    max-width: 300px;
+                    word-wrap: break-word;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    z-index: 1000;
+                }
 
-            /* Top Navigation Bar Styles */
-            nav {
-                background-color: #333;
-                padding: 10px 20px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
+                /* Top Navigation Bar Styles */
+                nav {
+                    background-color: #333;
+                    padding: 10px 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
 
-            nav a {
-                color: white;
-                text-decoration: none;
-                padding: 10px 15px;
-                font-size: 16px;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                border-radius: 5px;
-                transition: background-color 0.3s;
-            }
+                nav a {
+                    color: white;
+                    text-decoration: none;
+                    padding: 10px 15px;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    border-radius: 5px;
+                    transition: background-color 0.3s;
+                }
 
-            nav a:hover {
-                background-color: #575757;
-            }
+                nav a:hover {
+                    background-color: #575757;
+                }
 
-            .logo {
-                font-size: 20px;
-                font-weight: bold;
-                color: white;
-            }
+                .logo {
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: white;
+                }
 
-            /* Right-aligned links (e.g., for other sections or logout) */
-            .nav-links {
-                display: flex;
-            }
+                /* Right-aligned links (e.g., for other sections or logout) */
+                .nav-links {
+                    display: flex;
+                }
 
-            .nav-links a {
-                margin-left: 20px;
-            }
-        </style>
-    </head>
-    <body>
-        <!-- Tooltip container -->
-<div id="tooltip" class="tooltip"></div>
-        
-            <script>
-                // Function to fetch HTML content and display it in the tooltip
-                function showTooltip(e, path) {
-                    var tooltip = document.getElementById('tooltip');
-                    
-                    // Fetch content from the target HTML page
-                    fetch(path)
-                        .then(response => response.text())
-                        .then(data => {
-                            // Set the tooltip content to the fetched HTML (or a part of it)
-                            tooltip.innerHTML = data.substring(0, 500); // Limit the length to prevent overflow
-                            tooltip.style.display = 'block';
-                            tooltip.style.left = e.pageX + 'px';  // Position the tooltip based on the mouse
-                            tooltip.style.top = e.pageY + 10 + 'px';  // Position with some offset
-                        })
-                        .catch(error => {
-                            console.error("Error loading file:", error);
+                .nav-links a {
+                    margin-left: 20px;
+                }
+            </style>
+        </head>
+        <body>
+            <!-- Tooltip container -->
+    <div id="tooltip" class="tooltip"></div>
+            <h3>UI Info</h3><table border='1'><a href="/autowiki2025/tables/ui_info_table.html">tables/ui info table</a><br>
+<tr><td>screen name id</td><td>$577900 -- Victory Sash Wargear</td></tr><tr><td>icon name</td><td>guard icons/</td></tr></table><h3>Requirements</h3><table border='1'><a href="/autowiki2025/tables/requirements.html">tables/requirements</a><br>
+</table><table><tr><th>Property</th><th>Value</th></tr><tr><td>UI Hotkey Name</td><td>[[]]</td></tr><tr><td>UI Index Hint</td><td>1</td></tr></table>
+                <script>
+                    // Function to fetch HTML content and display it in the tooltip
+                    function showTooltip(e, path) {
+                        var tooltip = document.getElementById('tooltip');
+                        
+                        // Fetch content from the target HTML page
+                        fetch(path)
+                            .then(response => response.text())
+                            .then(data => {
+                                // Set the tooltip content to the fetched HTML (or a part of it)
+                                tooltip.innerHTML = data.substring(0, 500); // Limit the length to prevent overflow
+                                tooltip.style.display = 'block';
+                                tooltip.style.left = e.pageX + 'px';  // Position the tooltip based on the mouse
+                                tooltip.style.top = e.pageY + 10 + 'px';  // Position with some offset
+                            })
+                            .catch(error => {
+                                console.error("Error loading file:", error);
+                            });
+                    }
+
+                    // Function to hide the tooltip when mouse leaves the link
+                    function hideTooltip() {
+                        var tooltip = document.getElementById('tooltip');
+                        tooltip.style.display = 'none';
+                    }
+
+                    // Add event listeners to links
+                    var links = document.querySelectorAll('.hover-link');
+                    links.forEach(link => {
+                        link.addEventListener('mouseover', function(e) {
+                            var path = link.getAttribute('data-path');  // Get the file path from data attribute
+                            showTooltip(e, path);  // Show the tooltip with content
                         });
-                }
 
-                // Function to hide the tooltip when mouse leaves the link
-                function hideTooltip() {
-                    var tooltip = document.getElementById('tooltip');
-                    tooltip.style.display = 'none';
-                }
-
-                // Add event listeners to links
-                var links = document.querySelectorAll('.hover-link');
-                links.forEach(link => {
-                    link.addEventListener('mouseover', function(e) {
-                        var path = link.getAttribute('data-path');  // Get the file path from data attribute
-                        showTooltip(e, path);  // Show the tooltip with content
+                        link.addEventListener('mouseout', hideTooltip);  // Hide the tooltip when mouse leaves
                     });
-
-                    link.addEventListener('mouseout', hideTooltip);  // Hide the tooltip when mouse leaves
-                });
-            </script>
-    </body>
-    </html>
+                </script>
+        </body>
+        </html>
