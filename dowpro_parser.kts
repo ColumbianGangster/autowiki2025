@@ -38,8 +38,8 @@ fun getLuaFiles(directoryPath: String): List<File> {
 
     val directoriesToInclude = listOf(
         "abilities", "addons", "ebps", "races",
-        "chaos", "dark_eldar", "eldar", "guard", "necron",
-        "ork", "sisters", "space_marine", "steel_legion", "tau", "tyranid",
+        "chaos", "dark_eldar", "eldar", "guard", "necrons",
+        "orks", "sisters", "space_marines", "steel_legion", "tau", "tyranids",
         "structures", "troops", "modifiers", "requirements", "research", "sbps"
     )
 
