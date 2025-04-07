@@ -33,14 +33,14 @@ fun main() {
 // Recursively get all Lua files from a directory and its subdirectories
 fun getLuaFiles(directoryPath: String): List<File> {
     val filesToExclude = listOf(
-        "_dxp3_", "_hg_", "_sp_", "_dxp3.", "_hg.", "_sp.", "nis.",
+        "_dxp3_", "_hg_", "_sp_", "_dxp3.", "_hg.", "_sp.", "nis.", "_nis_", "_test.", "_prisoner", 
     )
 
     val directoriesToInclude = listOf(
         "abilities", "addons", "ebps", "races",
         "chaos", "dark_eldar", "eldar", "guard", "necrons",
         "orks", "sisters", "space_marines", "steel_legion", "tau", "tyranids",
-        "structures", "troops", "modifiers", "requirements", "research", "sbps"
+        "structures", "troops", "modifiers", "requirements", "research", "sbps", "weapon",
     )
 
     val directoriesToExclude = listOf(
