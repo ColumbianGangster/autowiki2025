@@ -756,7 +756,7 @@ fun generateHtmlLink(path: String): String {
         // Convert backslashes to forward slashes for URLs
         val filePathUrl = path.replace("\\", "/").replace(".lua", ".html").replace("[[", "").replace("]]", "")
         // Create a hyperlink in HTML format
-        htmlBuilder.append("<a href=\"/$filePathUrl\">${cleanString(filePathUrl)}</a><br>\n")
+        htmlBuilder.append("<a href=\"/autowiki2025/$filePathUrl\">${cleanString(filePathUrl)}</a><br>\n")
         // htmlBuilder.append("<a href=\"file:///Users/bertrandbrompton/Documents/Warhammer%2040k/docs/$filePathUrl\">${cleanString(filePathUrl)}</a><br>\n")
         // htmlBuilder.append("<a href=\"javascript:void(0)\" class=\"hover-link\" data-path=\"/$filePathUrl\">${cleanString(filePathUrl)}</a><br>\n")
 
