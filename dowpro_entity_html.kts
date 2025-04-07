@@ -107,6 +107,25 @@ data class Root (
       @SerializedName("ui_instructional_msg"              ) var uiInstructionalMsg            : String?               = null,
       @SerializedName("target_self_shazam"                ) var targetSelfShazam              : String?               = null,
       @SerializedName("ui_index_hint"                     ) var uiIndexHint                   : String?               = null,
+
+      // squad
+        @SerializedName("squad_ui_ext"             ) var squadUiExt            : UiExt?,
+        @SerializedName("squad_jump_ext"           ) var squadJumpExt          : SquadJumpExt?,
+        @SerializedName("squad_transportable_ext"  ) var squadTransportableExt : SquadTransportableExt?,
+        @SerializedName("squad_capture_strategic_point_ext" ) var squadCaptureStrategicPointExt : SquadCaptureStrategicPointExt?,
+        @SerializedName("squad_modifier_ext"       ) var squadModifierExt      : ModifierExt?,
+        @SerializedName("squad_blueprint_ext"      ) var squadBlueprintExt     : SquadBlueprintExt?,
+        @SerializedName("squad_reinforce_ext"      ) var squadReinforceExt     : SquadReinforceExt?,
+        @SerializedName("squad_cover_ext"          ) var squadCoverExt         : CoverExt?,
+        @SerializedName("squad_morale_ext"         ) var squadMoraleExt        : SquadMoraleExt?,
+        @SerializedName("squad_melee_stance_ext"   ) var squadMeleeStanceExt   : SquadMeleeStanceExt?,
+        @SerializedName("squad_combat_stance_ext"  ) var squadCombatStanceExt  : SquadCombatStanceExt?,
+        @SerializedName("squad_formation_ext"      ) var squadFormationExt     : SquadFormationExt?,
+        @SerializedName("squad_attach_receive_ext"          ) var squadAttachReceiveExt         : SquadAttachReceiveExt?,
+        @SerializedName("squad_loadout_ext"        ) var squadLoadoutExt       : SquadLoadoutExt?,
+        @SerializedName("squad_cap_ext"            ) var squadCapExt           : SquadCapExt?,
+        @SerializedName("squad_modifier_apply_ext" ) var squadModifierApplyExt : ModifierApplyExt?,
+        @SerializedName("squad_requirement_ext"    ) var squadRequirementExt   : RequirementExt?,
 )
 
 // entities
@@ -154,7 +173,6 @@ data class MeleeExt (
   @SerializedName("charge_modifiers" ) var chargeModifiers : ChargeModifiers?,
   @SerializedName("charge_range"     ) var chargeRange     : String?          = null,
   @SerializedName("in_melee_modifiers" ) var inMeleeModifiers : InMeleeModifiers?,
-
 )
 
 data class ChargeModifier(
@@ -173,8 +191,6 @@ data class ChargeModifiers(
     @SerializedName("charge_modifier_03" ) var chargeModifier03 : ChargeModifier?,
     @SerializedName("charge_modifier_04" ) var chargeModifier04 : ChargeModifier?,
 )
-
-
 
 data class Abilities (
   @SerializedName("ability_01" ) var ability01 : String? = null,
@@ -257,6 +273,9 @@ data class UiExt (
   @SerializedName("ui_hotkey_name"    ) var uiHotkeyName     : String? = null,
   @SerializedName("ui_info"           ) var uiInfo           : UiInfo?,
   @SerializedName("ui_index_hint"     ) var uiIndexHint      : String? = null,
+  @SerializedName("multi_select_priority" ) var multiSelectPriority : String? = null, // squad
+  @SerializedName("completed_research_filter"  ) var completedResearchFilter  : ResearchTable?, // squad, necron lord
+  @SerializedName("completed_research_display" ) var completedResearchDisplay : String?                  = null, // squad, necron lord
 )
 
 data class SpawnExt (
@@ -277,6 +296,13 @@ data class Required (
   @SerializedName("this_structure_count"     ) var thisStructureCount     : String? = null,
   @SerializedName("required_structure_name"  ) var requiredStructureName  : String? = null,
   @SerializedName("max_cap"   ) var maxCap    : String? = null,
+  @SerializedName("max_squad_cap" ) var maxSquadCap : String? = null, // squad
+  @SerializedName("addon_name"             ) var addonName            : String? = null, // squad
+  @SerializedName("max_cumulative_squad_cap") var maxCumulativeSquadCap : String? = null, // squad
+  @SerializedName("is_human_player_in_a_metamap_game" ) var isHumanPlayerInAMetamapGame : String? = null, // squad
+  @SerializedName("squad_table"              ) var squadTable            : SquadTable?, // squad, necron lord,
+  @SerializedName("population_required" ) var populationRequired : String? = null, // squad, ork
+  @SerializedName("replace_when_done") var replaceWhenDone : String? = null, // squad, MANz
 )
 
 data class Requirements (
@@ -290,6 +316,27 @@ data class Requirements (
   @SerializedName("required_7" ) var required7 : Required?,
   @SerializedName("required_8" ) var required8 : Required?,
   @SerializedName("required_9" ) var required9 : Required?,
+  @SerializedName("required_10" ) var required10 : Required?,
+  @SerializedName("required_11" ) var required11 : Required?,
+  @SerializedName("required_12" ) var required12 : Required?,
+  @SerializedName("required_13" ) var required13 : Required?,
+  @SerializedName("required_14" ) var required14 : Required?,
+  @SerializedName("required_15" ) var required15 : Required?,
+  @SerializedName("required_16" ) var required16 : Required?,
+  @SerializedName("required_17" ) var required17 : Required?,
+  @SerializedName("required_18" ) var required18 : Required?,
+  @SerializedName("required_19" ) var required19 : Required?,
+  @SerializedName("required_20" ) var required20 : Required?,
+  @SerializedName("required_21" ) var required21 : Required?,
+  @SerializedName("required_22" ) var required22 : Required?,
+  @SerializedName("required_23" ) var required23 : Required?,
+  @SerializedName("required_24" ) var required24 : Required?,
+  @SerializedName("required_25" ) var required25 : Required?,
+  @SerializedName("required_26" ) var required26 : Required?,
+  @SerializedName("required_27" ) var required27 : Required?,
+  @SerializedName("required_28" ) var required28 : Required?,
+  @SerializedName("required_29" ) var required29 : Required?,
+  @SerializedName("required_30" ) var required30 : Required?,
 )
 
 data class RequirementExt (
@@ -509,6 +556,7 @@ data class TimeCost (
 data class Cost (
   @SerializedName("requisition" ) var requisition : String? = null,
   @SerializedName("power"       ) var power       : String? = null,
+  @SerializedName("population"  ) var population  : String? = null, // ork
 )
 
 data class ApplicationType (
@@ -859,6 +907,158 @@ data class FireCost (
   @SerializedName("power"       ) var power       : String? = null,
 )
 
+data class SquadJumpExt (
+  @SerializedName("setup_time"               ) var setupTime              : String? = null,
+  @SerializedName("charge_regeneration"      ) var chargeRegeneration     : String? = null,
+  @SerializedName("charge_starting_fraction" ) var chargeStartingFraction : String? = null,
+  @SerializedName("required_health_fraction" ) var requiredHealthFraction : String? = null,
+  @SerializedName("teleport"                 ) var teleport               : String? = null,
+  @SerializedName("go_up_time"               ) var goUpTime               : String? = null,
+  @SerializedName("jump_time_max"            ) var jumpTimeMax            : String? = null,
+  @SerializedName("charge_jump_cost_max"     ) var chargeJumpCostMax      : String? = null,
+  @SerializedName("combat_enabled"           ) var combatEnabled          : String? = null,
+  @SerializedName("reference"                ) var reference              : String? = null,
+  @SerializedName("breakdown_time"           ) var breakdownTime          : String? = null,
+  @SerializedName("charge_max"               ) var chargeMax              : String? = null,
+  @SerializedName("charge_jump_cost_min"     ) var chargeJumpCostMin      : String? = null,
+  @SerializedName("teleport_summon"          ) var teleportSummon         : String? = null,
+  @SerializedName("jump_distance_max"        ) var jumpDistanceMax        : String? = null,
+  @SerializedName("jump_time_min"            ) var jumpTimeMin            : String? = null,
+  @SerializedName("go_down_time"             ) var goDownTime             : String? = null,
+)
+
+data class TransportType (
+  @SerializedName("reference" ) var reference : String? = null,
+)
+
+
+data class SquadTransportableExt (
+  @SerializedName("reference"      ) var reference     : String?        = null,
+  @SerializedName("transport_type" ) var transportType : TransportType?,
+)
+
+data class SquadCaptureStrategicPointExt (
+  @SerializedName("reference"    ) var reference   : String? = null,
+  @SerializedName("capture_rate" ) var captureRate : String? = null,
+)
+
+data class SquadBlueprintExt (
+  @SerializedName("reference" ) var reference : String? = null,
+)
+
+data class SquadReinforceExt (
+  @SerializedName("reference"                 ) var reference              : String? = null,
+  @SerializedName("weapon_event"              ) var weaponEvent            : String? = null,
+  @SerializedName("cost"                      ) var cost                   : TimeCost?,
+  @SerializedName("trooper_event"             ) var trooperEvent           : String? = null,
+  @SerializedName("can_upgrade"               ) var canUpgrade             : String? = null,
+  @SerializedName("in_combat_time_multiplier" ) var inCombatTimeMultiplier : String? = null,
+  @SerializedName("max_upgrades" ) var maxUpgrades : String? = null,
+  @SerializedName("leader_event"              ) var leaderEvent            : String? = null // ork
+)
+
+data class SquadMoraleExt (
+  @SerializedName("reference"         ) var reference       : String?          = null,
+  @SerializedName("broken_min_morale" ) var brokenMinMorale : String?          = null,
+  @SerializedName("broken_min_time"   ) var brokenMinTime   : String?          = null,
+  @SerializedName("rate_per_second"   ) var ratePerSecond   : String?          = null,
+  @SerializedName("default"           ) var default         : String?          = null,
+  @SerializedName("broken_modifiers"  ) var brokenModifiers : Modifiers?,
+  @SerializedName("morale_armour"     ) var moraleArmour    : String?          = null,
+  @SerializedName("max"               ) var max             : String?          = null
+)
+
+data class SquadMeleeStanceExt (
+  @SerializedName("reference"        ) var reference      : String? = null,
+  @SerializedName("default_to_melee" ) var defaultToMelee : String? = null,
+)
+
+data class Priority (
+  @SerializedName("reference"      ) var reference    : String? = null,
+  @SerializedName("screen_name_id" ) var screenNameId : String? = null,
+)
+
+data class AttackPriorities (
+  @SerializedName("priority_01" ) var priority01 : Priority? = null,
+  @SerializedName("priority_02" ) var priority02 : Priority? = null,
+  @SerializedName("priority_03" ) var priority03 : Priority? = null,
+  @SerializedName("priority_04" ) var priority04 : Priority? = null,
+  @SerializedName("priority_05" ) var priority05 : Priority? = null,
+  @SerializedName("priority_06" ) var priority06 : Priority? = null,
+  @SerializedName("priority_07" ) var priority07 : Priority? = null,
+  @SerializedName("priority_08" ) var priority08 : Priority? = null,
+  @SerializedName("priority_09" ) var priority09 : Priority? = null,
+  @SerializedName("priority_10" ) var priority10 : Priority? = null,
+  @SerializedName("priority_11" ) var priority11 : Priority? = null,
+  @SerializedName("priority_12" ) var priority12 : Priority? = null,
+  @SerializedName("priority_13" ) var priority13 : Priority? = null,
+  @SerializedName("priority_14" ) var priority14 : Priority? = null,
+  @SerializedName("priority_15" ) var priority15 : Priority? = null,
+  @SerializedName("priority_16" ) var priority16 : Priority? = null,
+  @SerializedName("priority_17" ) var priority17 : Priority? = null,
+)
+
+data class DefaultStance (
+  @SerializedName("reference" ) var reference : String? = null,
+)
+
+data class SquadCombatStanceExt (
+  @SerializedName("reference"         ) var reference        : String?           = null,
+  @SerializedName("attack_priorities" ) var attackPriorities : AttackPriorities?,
+  @SerializedName("ignore_building_stance" ) var ignoreBuildingStance : String?           = null,
+  @SerializedName("default_stance"         ) var defaultStance        : DefaultStance?,
+)
+
+data class SquadFormationExt (
+  @SerializedName("reference"      ) var reference     : String? = null,
+  @SerializedName("idle_formation" ) var idleFormation : String? = null,
+)
+
+data class SquadAttachReceiveExt (
+  @SerializedName("reference" ) var reference : String? = null, 
+)
+
+data class TrooperBase (
+  @SerializedName("type" ) var type : String? = null,
+)
+
+data class SquadLoadoutExt (
+  @SerializedName("reference"    ) var reference   : String?      = null,
+  @SerializedName("cause_transformation" ) var causeTransformation : String?      = null,
+  @SerializedName("unit_min"     ) var unitMin     : String?      = null,
+  @SerializedName("trooper_base" ) var trooperBase : TrooperBase?,
+  @SerializedName("unit_max"     ) var unitMax     : String?      = null,
+)
+
+data class SquadCapExt (
+  @SerializedName("reference"       ) var reference     : String? = null,
+  @SerializedName("squad_cap_usage" ) var squadCapUsage : String? = null,
+)
+
+data class Leader (
+  @SerializedName("type" ) var type : String? = null,
+)
+
+data class Leader1 (
+  @SerializedName("leader"           ) var leader         : Leader?,
+  @SerializedName("cost_time"        ) var costTime       : TimeCost?,
+  @SerializedName("add_while_moving" ) var addWhileMoving : String?   = null,
+)
+
+data class SquadLeaderExt (
+  @SerializedName("reference" ) var reference : String?  = null,
+  @SerializedName("leader_1"  ) var leader1   : Leader1?,
+  @SerializedName("leader_2"  ) var leader2   : Leader1?,
+  @SerializedName("leader_3"  ) var leader3   : Leader1?,
+  @SerializedName("leader_4"  ) var leader4   : Leader1?,
+  @SerializedName("leader_5"  ) var leader5   : Leader1?,
+  @SerializedName("leader_6"  ) var leader6   : Leader1?,
+  @SerializedName("leader_7"  ) var leader7   : Leader1?,
+  @SerializedName("leader_8"  ) var leader8   : Leader1?,
+  @SerializedName("leader_9"  ) var leader9   : Leader1?,
+  @SerializedName("leader_10"  ) var leader10   : Leader1?,
+)
+
 val gson = GsonBuilder().setLenient().create()
 
 fun generateHtmlLink(path: String): String {
@@ -1024,6 +1224,7 @@ fun generateHtml(root: Any?): String {
         htmlContent.append(generateSection("GarrisonExt", root.garrisonExt))
         htmlContent.append(generateSection("RelocateeExt", root.relocateeExt))
         generateAbilitySection(root, htmlContent)
+        generateSquadSection(root, htmlContent)
     } else {
         // For simple objects, generate a table
         if (map.isNotEmpty()) {
@@ -1040,6 +1241,35 @@ fun generateHtml(root: Any?): String {
             append("<tr><td>$label</td><td>$value</td></tr>")
         }
     }
+
+fun generateSquadSection(squad: Root?, htmlContent: StringBuilder) {
+    val items = listOf(
+        "Squad UI Ext" to squad?.squadUiExt,
+        "Squad Jump Ext" to squad?.squadJumpExt,
+        "Squad Transportable Ext" to squad?.squadTransportableExt,
+        "Squad Modifier Ext" to squad?.squadModifierExt,
+        "Squad Blueprint Ext" to squad?.squadBlueprintExt,
+        "Squad Reinforce Ext" to squad?.squadReinforceExt,
+        "Squad Cover Ext" to squad?.squadCoverExt,
+        "Squad Morale Ext" to squad?.squadMoraleExt,
+        "Squad Melee Stance Ext" to squad?.squadMeleeStanceExt,
+        "Squad Combat Stance Ext" to squad?.squadCombatStanceExt,
+        "Squad Formation Ext" to squad?.squadFormationExt,
+        "Squad Loadout Ext" to squad?.squadLoadoutExt,
+        "Squad Cap Ext" to squad?.squadCapExt,
+        "Squad Modifier Apply Ext" to squad?.squadModifierApplyExt,
+        "Squad Requirement Ext" to squad?.squadRequirementExt
+    )
+
+    with(htmlContent) {
+        for ((name, ext) in items) {
+            if (ext != null) {
+                append(generateSection(name, ext))
+            }
+        }
+    }
+}
+
 
 fun generateAbilitySection(ability: Root?, htmlContent: StringBuilder) {
     // Append each property from the ability object to the HTML content    

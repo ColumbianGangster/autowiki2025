@@ -2,6 +2,11 @@ import java.io.File
 import java.math.BigDecimal
 import java.math.RoundingMode
 
+fun printClickableLink(text: String, url: String) {
+    val hyperlink = "\u001B]8;;$url\u0007$text\u001B]8;;\u0007"
+    println(hyperlink)
+}
+
 fun main() {
     val inputDir = File("docs")   // Change this
     val outputDir = File("docs") // Change this
@@ -137,7 +142,7 @@ fun main() {
 
     indexFile.writeText(htmlContent)
 
-    println("Index file generated at: ${indexFile.absolutePath}")
+    printClickableLink("Index file generated at: ${indexFile.absolutePath}", indexFile.absolutePath)
 }
 
 fun cleanString(input: String): String {
