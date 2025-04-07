@@ -23,7 +23,7 @@ fun main() {
             
             // Write the JSON to the output file
             outputFile.writeText(json.toString(4))  // Pretty print the JSON
-            println("Created JSON file: ${outputFile.absolutePath}")
+            // println("Created JSON file: ${outputFile.absolutePath}")
         } catch (e: Exception) {
             println("Error processing file ${luaFile.absolutePath}: ${e.message}")
         }
@@ -65,8 +65,6 @@ fun parseLuaToJson(luaContent: String): JSONObject {
     // Parse the Lua content line by line
     for (line in lines) {
         val trimmedLine = line.trim()
-        println(line)
-
         // Skip empty lines and comments
         if (trimmedLine.isEmpty() || trimmedLine.startsWith("--")) continue
 
@@ -93,6 +91,10 @@ fun parseLuaToJson(luaContent: String): JSONObject {
                 val refName = value.removePrefix("Reference([[").removeSuffix("]])")
                 nestedObject.put(keyParts.last(), JSONObject().apply { put("reference", refName) })
             } else if (value.startsWith("Inherit")) {
+            } else if (value.equals("nil", ignoreCase = true) || value == "\"nil\"") {
+                // println(line)
+                // Handle "nil" values and convert them to null
+                // nestedObject.put(keyParts.last(), JSONObject.NULL)
             } else {
                 // Handle regular key-value assignment
                 nestedObject.put(keyParts.last(), value)
